@@ -1,0 +1,269 @@
+---
+title: "Prosti pad in navpični met"
+section: "1. Letnik"
+subsection: "Kinematika"
+---
+
+<EquationBox>
+  <EqRow>
+    $$ h = \frac{gt^2}{2} $$
+
+    Izračun poti (višine) pri prostem padu.
+  </EqRow>
+  <EqRow>
+    $$ v = gt $$
+
+    Končna hitrost telesa pri prostem padu.
+  </EqRow>
+  <EqRow>
+    $$ h = v_0 t - \frac{gt^2}{2} $$
+
+    Trenutna višina pri navpičnem metu navzgor.
+  </EqRow>
+  <EqRow>
+    $$ v = v_0 - gt $$
+
+    Trenutna hitrost pri navpičnem metu navzgor.
+  </EqRow>
+</EquationBox>
+
+<ProblemSet>
+
+<Problem title="Naloga 1: Globina vodnjaka" difficulty={0}>
+V vodnjak vržemo kamen. Pljusk slišimo čez 2,5 sekunde. Kako globok je vodnjak, če zanemarimo čas potovanja zvoka?
+
+<Solution>
+**Podatki:**
+- $t = 2,5 \text{ s}$
+- $g \approx 10 \text{ m/s}^2$
+
+**Račun:**
+$$ h = \frac{gt^2}{2} = \frac{10 \cdot 6,25}{2} = 31,25 \text{ m} $$
+</Solution>
+</Problem>
+
+<Problem title="Naloga 2: Hitrost pri padcu" difficulty={0}>
+S katere višine je padlo telo, če je pri tleh imelo hitrost $100 \text{ km/h}$?
+
+<Solution>
+**Podatki:**
+- $v = 100 \text{ km/h} = 27,8 \text{ m/s}$
+
+**Račun:**
+$$ v^2 = 2gh \Rightarrow h = \frac{v^2}{2g} $$
+$$ h = \frac{27,8^2}{20} \approx 38,6 \text{ m} $$
+</Solution>
+</Problem>
+
+<Problem title="Naloga 3: Met navzgor" difficulty={1}>
+Žogo vržemo navpično navzgor s hitrostjo $20 \text{ m/s}$. Kako visoko poleti in koliko časa je v zraku?
+
+<Solution>
+**Podatki:**
+- $v_0 = 20 \text{ m/s}$
+
+**Višina:**
+Na vrhu je $v=0$.
+$$ v^2 = v_0^2 - 2gh \Rightarrow h = \frac{v_0^2}{2g} = \frac{400}{20} = 20 \text{ m} $$
+
+**Čas:**
+Čas dviganja je enak času padanja.
+$$ v = v_0 - gt \Rightarrow t_{dvig} = \frac{v_0}{g} = 2 \text{ s} $$
+Celoten čas je $4 \text{ s}$.
+</Solution>
+</Problem>
+
+<Problem title="Naloga 4: Met z višine" difficulty={2}>
+S stolpa višine 25 m vržemo kamen navpično navzgor s hitrostjo $15 \text{ m/s}$. Kdaj pade na tla?
+
+<Solution>
+**Podatki:**
+- $h_0 = 25 \text{ m}$ (začetna višina)
+- $v_0 = 15 \text{ m/s}$
+- Končna višina $h = 0$.
+
+**Enačba:**
+$$ h(t) = h_0 + v_0 t - \frac{gt^2}{2} $$
+$$ 0 = 25 + 15t - 5t^2 $$
+Delimo s -5:
+$$ t^2 - 3t - 5 = 0 $$
+
+**Rešitev:**
+$$ t = \frac{3 \pm \sqrt{9 + 20}}{2} = \frac{3 \pm 5,4}{2} $$
+Pozitivna rešitev: $t \approx 4,2 \text{ s}$.
+</Solution>
+</Problem>
+
+<Problem title="Naloga 5: Srečanje v zraku" difficulty={2}>
+Prvi kamen spustimo prosto z višine 40 m. Istočasno z tal vržemo drugi kamen navpično navzgor s hitrostjo $20 \text{ m/s}$. Kdaj in kje se srečata?
+
+<Solution>
+**Enačbi:**
+1. Kamen (dol): $h_1 = H - \frac{gt^2}{2} = 40 - 5t^2$
+2. Kamen (gor): $h_2 = v_0 t - \frac{gt^2}{2} = 20t - 5t^2$
+
+**Srečanje:**
+$$ h_1 = h_2 $$
+$$ 40 - 5t^2 = 20t - 5t^2 $$
+$$ 40 = 20t \Rightarrow t = 2 \text{ s} $$
+
+Višina:
+$$ h = 20(2) - 5(4) = 40 - 20 = 20 \text{ m} $$
+Srečata se na polovici višine.
+</Solution>
+</Problem>
+
+<Problem title="Naloga 6: Graf hitrosti (navpični met)" difficulty={1}>
+Nariši graf $v(t)$ za met navzgor s hitrostjo $30 \text{ m/s}$. Označi točke, kjer je telo na najvišji točki in ko pade nazaj na tla.
+
+<Solution>
+Graf je padajoča premica z začetno vrednostjo 30.
+- $t=0, v=30$
+- $t=3, v=0$ (najvišja točka)
+- $t=6, v=-30$ (padec na tla)
+Naklon premice je $-g \approx -10 \text{ m/s}^2$.
+</Solution>
+</Problem>
+
+<Problem title="Naloga 7: Zadnji meter" difficulty={2}>
+Telo prosto pada. Zadnjih 10 metrov poti preleti v 0,2 sekunde. Z katere višine je padlo?
+
+<Solution>
+**Razmislek:**
+Naj bo $t$ celoten čas padanja. Čas na začetku zadnjega dela je $t - 0,2$.
+Pot v zadnjem delu:
+$$ \Delta h = h(t) - h(t-0,2) = 10 $$
+$$ \frac{gt^2}{2} - \frac{g(t-0,2)^2}{2} = 10 $$
+$$ 5t^2 - 5(t^2 - 0,4t + 0,04) = 10 $$
+$$ 5t^2 - 5t^2 + 2t - 0,2 = 10 $$
+$$ 2t = 10,2 \Rightarrow t = 5,1 \text{ s} $$
+
+**Višina:**
+$$ H = 5 \cdot (5,1)^2 \approx 130 \text{ m} $$
+</Solution>
+</Problem>
+
+<Problem title="Naloga 8: Odboj" difficulty={1}>
+Žogico spustimo z višine 2 m. Ob tleh izgubi 10% svoje hitrosti. Kako visoko se odbije?
+
+<Solution>
+**Padec:**
+$$ v^2 = 2gh \Rightarrow v = \sqrt{2 \cdot 10 \cdot 2} = \sqrt{40} \approx 6,32 \text{ m/s} $$
+
+**Odboj:**
+Nova hitrost $v' = 0,9 \cdot v = 5,69 \text{ m/s}$.
+
+**Nova višina:**
+$$ h' = \frac{v'^2}{2g} = \frac{32,4}{20} = 1,62 \text{ m} $$
+</Solution>
+</Problem>
+
+<Problem title="Naloga 9: Padalec" difficulty={1}>
+Padalec skače iz letala. Prvih 5 sekund pada prosto, nato odpre padalo in se giblje enakomerno s hitrostjo, ki jo je imel v tistem trenutku. Nariši graf $v(t)$ za prvih 15 sekund.
+
+<Solution>
+**0-5s:**
+Enakomerno pospešeno. $v(5) = 10 \cdot 5 = 50 \text{ m/s}$.
+Graf je premica iz (0,0) do (5, 50).
+
+**5-15s:**
+Enakomerno. $v = 50 \text{ m/s}$.
+Graf je vodoravna premica.
+</Solution>
+</Problem>
+
+<Problem title="Naloga 10: Dvigalo" difficulty={2}>
+V dvigalu, ki se dviga s pospeškom $2 \text{ m/s}^2$, spustimo ključe z višine 1,5 m (glede na tla dvigala). Kako dolgo padajo?
+
+<Solution>
+**Relativni pospešek:**
+Ključi padajo s pospeškom $g$ navzdol. Tla dvigala pospešujejo z $a$ navzgor.
+Relativni pospešek ključev glede na tla dvigala je $g + a = 12 \text{ m/s}^2$.
+
+**Čas:**
+$$ h = \frac{a_{rel} t^2}{2} $$
+$$ 1,5 = \frac{12 t^2}{2} = 6t^2 $$
+$$ t = \sqrt{0,25} = 0,5 \text{ s} $$
+</Solution>
+</Problem>
+
+<Problem title="Naloga 11: Graf poti pri padanju" difficulty={1}>
+Kateri graf pravilno prikazuje opravljeno pot pri prostem padu v odvisnosti od časa? Nariši ga za prve 3 sekunde.
+
+<Solution>
+Pot pri prostem padu narašča s kvadratom časa: $h = \frac{gt^2}{2} \approx 5t^2$.
+To je parabola.
+
+**Točke:**
+- $t=0, h=0$
+- $t=1, h=5 \text{ m}$
+- $t=2, h=20 \text{ m}$
+- $t=3, h=45 \text{ m}$
+
+<Graph 
+  title="Graf poti h(t)"
+  xKey="t"
+  yKey="h"
+  yLabel="h [m]"
+  type="monotone"
+  data={[
+    { t: 0, h: 0 },
+    { t: 1, h: 5 },
+    { t: 2, h: 20 },
+    { t: 3, h: 45 }
+  ]}
+/>
+</Solution>
+</Problem>
+
+<Problem title="Naloga 12: Risanje v(t) za met navzdol" difficulty={1}>
+Kamen vržemo navpično navzdol s hitrostjo 10 m/s. Nariši graf hitrosti v odvisnosti od časa za prvi dve sekundi. ($g=10 \text{ m/s}^2$).
+
+<Solution>
+Hitrost narašča linearno: $v = v_0 + gt$.
+Začetna hitrost je 10 m/s.
+
+**Točke:**
+- $t=0, v=10$
+- $t=1, v=20$
+- $t=2, v=30$
+
+<Graph 
+  title="Graf hitrosti v(t)"
+  xKey="t"
+  yKey="v"
+  yLabel="v [m/s]"
+  data={[
+    { t: 0, v: 10 },
+    { t: 2, v: 30 }
+  ]}
+/>
+</Solution>
+</Problem>
+
+<Problem title="Naloga 13: Ploščina pod grafom hitrosti" difficulty={1}>
+Graf prikazuje hitrost telesa pri prostem padu. Izračunaj, za koliko metrov je telo padlo v 4 sekundah, tako da uporabiš graf.
+
+<Graph 
+  title="Graf hitrosti v(t)"
+  xKey="t"
+  yKey="v"
+  yLabel="v [m/s]"
+  data={[
+    { t: 0, v: 0 },
+    { t: 4, v: 40 }
+  ]}
+/>
+
+<Solution>
+**Razmislek:**
+Pot je ploščina pod grafom $v(t)$.
+Graf tvori pravokotni trikotnik z osnovnico $t=4$ in višino $v=40$.
+
+**Račun:**
+$$ s = \frac{t \cdot v}{2} = \frac{4 \cdot 40}{2} = 80 \text{ m} $$
+(Preizkus s formulo: $s = \frac{10 \cdot 4^2}{2} = 80 \text{ m}$).
+</Solution>
+</Problem>
+
+</ProblemSet>

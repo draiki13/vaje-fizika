@@ -1,0 +1,124 @@
+---
+title: "Plinski zakoni"
+section: "2. Letnik"
+subsection: "Zgradba snovi in temperatura"
+---
+
+Plinski zakoni opisujejo, kako se spreminjajo tlak, prostornina in temperatura določene množine plina, ko eno od teh spremenljivk ohranjamo konstantno ali ko se spreminjajo vse tri hkrati.
+
+<EquationBox>
+  <EqRow>
+    $$ p \cdot V = \text{konst.} $$
+
+    **Izotermna sprememba ($T = \text{konst.}$)**: Tlak in prostornina sta obratno sorazmerna (Boylov zakon).
+  </EqRow>
+  <EqRow>
+    $$ \frac{V}{T} = \text{konst.} $$
+
+    **Izobarna sprememba ($p = \text{konst.}$)**: Prostornina in absolutna temperatura sta premo sorazmerni (Gay-Lussacov zakon).
+  </EqRow>
+  <EqRow>
+    $$ \frac{p}{T} = \text{konst.} $$
+
+    **Izohorna sprememba ($V = \text{konst.}$)**: Tlak in absolutna temperatura sta premo sorazmerni (Amontonsov zakon).
+  </EqRow>
+  <EqRow>
+    $$ \frac{p_1 V_1}{T_1} = \frac{p_2 V_2}{T_2} $$
+
+    **Združeni plinski zakon**: Uporabimo, ko se hkrati spreminjajo tlak, prostornina in temperatura.
+  </EqRow>
+</EquationBox>
+
+## Naloge za utrjevanje
+
+<ProblemSet>
+
+<Problem title="Naloga 1: Izotermno stiskanje" difficulty={0}>
+Zrak v črpalki s prostornino $400 \text{ cm}^3$ stisnemo na $100 \text{ cm}^3$ pri konstantni temperaturi. Kolikšen je končni tlak, če je bil začetni tlak 1 bar?
+
+<Solution>
+**Razmislek:**
+Gre za izotermno spremembo ($T = konst$), zato velja Boylov zakon: $p_1 V_1 = p_2 V_2$.
+
+**Račun:**
+$$ p_2 = \frac{p_1 V_1}{V_2} = \frac{1 \text{ bar} \cdot 400 \text{ cm}^3}{100 \text{ cm}^3} = 4 \text{ bar} $$
+</Solution>
+</Problem>
+
+<Problem title="Naloga 2: Izobarno segrevanje" difficulty={1}>
+Vremenski balon ima pri temperaturi $15^\circ \text{C}$ prostornino $2 \text{ m}^3$. Na kolikšno prostornino se napihne, ko se na soncu segreje na $40^\circ \text{C}$? Tlak v balonu se ne spremeni.
+
+<Solution>
+**Podatki:**
+- $V_1 = 2 \text{ m}^3$
+- $T_1 = 15^\circ \text{C} = 288 \text{ K}$
+- $T_2 = 40^\circ \text{C} = 313 \text{ K}$
+
+**Račun:**
+Gre za izobarno spremembo ($p = konst$), velja Gay-Lussacov zakon: $\frac{V_1}{T_1} = \frac{V_2}{T_2}$.
+$$ V_2 = V_1 \cdot \frac{T_2}{T_1} = 2 \text{ m}^3 \cdot \frac{313}{288} \approx 2,17 \text{ m}^3 $$
+</Solution>
+</Problem>
+
+<Problem title="Naloga 3: Izohorno segrevanje" difficulty={1}>
+V zaprti posodi je plin pri tlaku 200 kPa in temperaturi $0^\circ \text{C}$. Do kolikšne temperature bi morali segreti plin, da bi se tlak podvojil?
+
+<Solution>
+**Razmislek:**
+Prostornina je konstantna ($V = konst$), zato velja: $\frac{p_1}{T_1} = \frac{p_2}{T_2}$.
+Če želimo $p_2 = 2p_1$, se mora podvojiti tudi absolutna temperatura $T$.
+
+**Račun:**
+- $T_1 = 273 \text{ K}$
+- $T_2 = 2 \cdot 273 \text{ K} = 546 \text{ K}$
+V Celzijih: $t_2 = 546 - 273 = 273^\circ \text{C}$.
+</Solution>
+</Problem>
+
+<Problem title="Naloga 4: Sprememba vseh spremenljivk" difficulty={2}>
+Mehurček zraka s prostornino $1 \text{ cm}^3$ se dvigne z dna jezera globine 20 m na površino. Na dnu je temperatura $7^\circ \text{C}$, na površini pa $22^\circ \text{C}$. Kolikšna je končna prostornina mehurčka?
+
+<Solution>
+**Podatki:**
+- $V_1 = 1 \text{ cm}^3$
+- $T_1 = 280 \text{ K}$, $T_2 = 295 \text{ K}$
+- $p_2 = 1 \text{ bar} = 10^5 \text{ Pa}$ (zunanji tlak)
+- $p_1 = p_2 + \rho gh = 10^5 + 1000 \cdot 10 \cdot 20 = 3 \cdot 10^5 \text{ Pa}$
+
+**Račun:**
+Uporabimo $\frac{p_1 V_1}{T_1} = \frac{p_2 V_2}{T_2}$:
+$$ V_2 = \frac{p_1 V_1 T_2}{p_2 T_1} = \frac{3 \cdot 10^5 \cdot 1 \cdot 295}{10^5 \cdot 280} \approx 3,16 \text{ cm}^3 $$
+</Solution>
+</Problem>
+
+<Problem title="Naloga 5: Segrevanje gume" difficulty={1}>
+Avtomobilsko grmo s prostornino 30 litrov napolnimo z zrakom do tlaka 2,2 bara pri $10^\circ \text{C}$. Med vožnjo se guma segreje in tlak naraste na 2,5 bara. Za koliko se je segrel zrak v gumi? (Privzemi, da je prostornina gume konstantna).
+
+<Solution>
+**Podatki:**
+- $p_1 = 2,2 \text{ bar}$, $p_2 = 2,5 \text{ bar}$
+- $T_1 = 283 \text{ K}$
+
+**Račun:**
+$\frac{p_1}{T_1} = \frac{p_2}{T_2} \Rightarrow T_2 = T_1 \cdot \frac{p_2}{p_1}$
+$$ T_2 = 283 \cdot \frac{2,5}{2,2} \approx 321,6 \text{ K} $$
+Razlika: $\Delta T = 321,6 - 283 = 38,6 \text{ K}$.
+Zrak se je segrel za približno $39^\circ \text{C}$.
+</Solution>
+</Problem>
+
+<Problem title="Naloga 6: Interpretacija grafa" difficulty={1}>
+Na $p-V$ diagramu je prikazana izotermna sprememba idealnega plina. V stanju A je tlak $4 \cdot 10^5 \text{ Pa}$ in prostornina $2 \text{ dm}^3$. Kolikšen je tlak v stanju B, kjer je prostornina $8 \text{ dm}^3$?
+
+<Solution>
+**Razmislek:**
+Ker je sprememba izotermna, je zmnožek $p \cdot V$ konstanten.
+$$ p_A V_A = p_B V_B $$
+
+**Račun:**
+$$ p_B = \frac{p_A V_A}{V_B} = \frac{4 \cdot 10^5 \text{ Pa} \cdot 2 \text{ dm}^3}{8 \text{ dm}^3} = 1 \cdot 10^5 \text{ Pa} $$
+Tlak se zmanjša na četrtino začetnega, ker se je prostornina 4-krat povečala.
+</Solution>
+</Problem>
+
+</ProblemSet>

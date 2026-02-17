@@ -1,0 +1,344 @@
+---
+title: "Premo enakomerno gibanje"
+section: "1. Letnik"
+subsection: "Kinematika"
+---
+
+<EquationBox>
+  <EqRow>
+    $$ s = v \cdot t $$
+
+    Prevožena pot pri konstantni hitrosti.
+  </EqRow>
+</EquationBox>
+
+<ProblemSet>
+
+<Problem title="Naloga 1: Osnove" difficulty={0}>
+Avtomobil vozi s konstantno hitrostjo $72 \text{ km/h}$. Kolikšno pot opravi v 20 minutah?
+
+<Solution>
+**Podatki:**
+- $v = 72 \text{ km/h} = 20 \text{ m/s}$
+- $t = 20 \text{ min} = 1200 \text{ s}$
+
+**Račun:**
+$$ s = v \cdot t = 20 \text{ m/s} \cdot 1200 \text{ s} = 24000 \text{ m} = 24 \text{ km} $$
+
+**Odgovor:** Avtomobil opravi pot 24 km.
+</Solution>
+</Problem>
+
+<Problem title="Naloga 2: Čas potovanja" difficulty={0}>
+Kolesar mora prevoziti razdaljo 45 km. S kakšno povprečno hitrostjo mora voziti, da bo na cilju v 2 urah in pol?
+
+<Solution>
+**Podatki:**
+- $s = 45 \text{ km}$
+- $t = 2,5 \text{ h}$
+
+**Račun:**
+$$ v = \frac{s}{t} = \frac{45 \text{ km}}{2,5 \text{ h}} = 18 \text{ km/h} $$
+
+**Odgovor:** Voziti mora s hitrostjo 18 km/h.
+</Solution>
+</Problem>
+
+<Problem title="Naloga 3: Srečanje" difficulty={1}>
+Iz kraja A proti kraju B odpelje avtomobil s hitrostjo $80 \text{ km/h}$. Istočasno iz kraja B proti kraju A odpelje tovornjak s hitrostjo $60 \text{ km/h}$. Razdalja med krajema je 280 km. Kdaj in kje se srečata?
+
+<Solution>
+**Podatki:**
+- $v_A = 80 \text{ km/h}$
+- $v_B = 60 \text{ km/h}$
+- $d = 280 \text{ km}$
+
+**Razmislek:**
+Ko se srečata, je vsota njunih poti enaka celotni razdalji. Čas vožnje je enak za oba.
+$$ s_A + s_B = d $$
+$$ v_A \cdot t + v_B \cdot t = d $$
+
+**Račun:**
+$$ t(v_A + v_B) = d $$
+$$ t = \frac{d}{v_A + v_B} = \frac{280 \text{ km}}{140 \text{ km/h}} = 2 \text{ h} $$
+
+Pot avtomobila:
+$$ s_A = v_A \cdot t = 80 \text{ km/h} \cdot 2 \text{ h} = 160 \text{ km} $$
+
+**Odgovor:** Srečata se po 2 urah vožnje, 160 km iz kraja A.
+</Solution>
+</Problem>
+
+<Problem title="Naloga 4: Graf poti (branje)" difficulty={1}>
+Telesu se spreminja lega kot prikazuje graf $x(t)$. Opiši gibanje telesa v posameznih odsekih in izračunaj hitrost v vsakem odseku.
+
+<Graph 
+  title="Graf lege od časa x(t)"
+  xKey="t"
+  yKey="x"
+  yLabel="x [m]"
+  data={[
+    { t: 0, x: 0 },
+    { t: 10, x: 50 },
+    { t: 20, x: 50 },
+    { t: 30, x: 0 }
+  ]}
+/>
+
+<Solution>
+**1. odsek (0-10s):**
+$$ v_1 = \frac{\Delta s}{\Delta t} = \frac{50 \text{ m} - 0 \text{ m}}{10 \text{ s}} = 5 \text{ m/s} $$
+
+**2. odsek (10-20s):**
+$$ v_2 = \frac{50 \text{ m} - 50 \text{ m}}{10 \text{ s}} = 0 \text{ m/s} $$
+
+**3. odsek (20-30s):**
+$$ v_3 = \frac{0 \text{ m} - 50 \text{ m}}{10 \text{ s}} = -5 \text{ m/s} $$
+Hitrost je negativna, ker se telo vrača.
+</Solution>
+</Problem>
+
+<Problem title="Naloga 5: Zvok" difficulty={1}>
+Planinec zavriska proti steni in sliši odmev po 3 sekundah. Kako daleč je stena, če je hitrost zvoka $340 \text{ m/s}$?
+
+<Solution>
+**Podatki:**
+- $t_{skupni} = 3 \text{ s}$
+- $c = 340 \text{ m/s}$
+
+**Razmislek:**
+Zvok mora potovati do stene in nazaj. Torej je čas potovanja do stene $t = 1,5 \text{ s}$.
+
+**Račun:**
+$$ d = c \cdot t = 340 \text{ m/s} \cdot 1,5 \text{ s} = 510 \text{ m} $$
+
+**Odgovor:** Stena je oddaljena 510 m.
+</Solution>
+</Problem>
+
+<Problem title="Naloga 6: Prehitevanje" difficulty={2}>
+Avtomobil dolžine 4 m vozi s hitrostjo $90 \text{ km/h}$ in prehiteva tovornjak dolžine 16 m, ki vozi s hitrostjo $72 \text{ km/h}$. Kako dolgo traja prehitevanje in kolikšno pot opravi avtomobil med prehitevanjem? (Prehitevanje se začne, ko se avto poravna z zadnjim delom tovornjaka, in konča, ko je zadnji del avta pred tovornjakom).
+
+<Solution>
+**Podatki:**
+- $l_A = 4 \text{ m}$
+- $v_A = 90 \text{ km/h} = 25 \text{ m/s}$
+- $l_T = 16 \text{ m}$
+- $v_T = 72 \text{ km/h} = 20 \text{ m/s}$
+
+**Razmislek:**
+Relativna hitrost avtomobila glede na tovornjak je:
+$$ v_{rel} = v_A - v_T = 5 \text{ m/s} $$
+Pot, ki jo mora avto narediti glede na tovornjak, je vsota dolžin obeh vozil (da pride cel avto mimo celega tovornjaka):
+$$ s_{rel} = l_A + l_T = 20 \text{ m} $$
+
+**Račun:**
+$$ t = \frac{s_{rel}}{v_{rel}} = \frac{20 \text{ m}}{5 \text{ m/s}} = 4 \text{ s} $$
+
+Pot avtomobila v tem času (glede na cesto):
+$$ s_A = v_A \cdot t = 25 \text{ m/s} \cdot 4 \text{ s} = 100 \text{ m} $$
+
+**Odgovor:** Prehitevanje traja 4 sekunde, avto prevozi 100 m.
+</Solution>
+</Problem>
+
+<Problem title="Naloga 7: Reka" difficulty={2}>
+Čoln vozi po reki navzdol s hitrostjo 12 km/h glede na breg, navzgor pa s 4 km/h glede na breg. Kolikšna je hitrost toka reke in kolikšna hitrost čolna glede na vodo?
+
+<Solution>
+**Oznake:**
+- $v_c$: hitrost čolna
+- $v_t$: hitrost toka
+
+**Enačbe:**
+1. Navzdol: $v_c + v_t = 12$
+2. Navzgor: $v_c - v_t = 4$
+
+**Reševanje sistema:**
+Seštejemo enačbi:
+$$ 2v_c = 16 \Rightarrow v_c = 8 \text{ km/h} $$
+Vstavimo v prvo:
+$$ 8 + v_t = 12 \Rightarrow v_t = 4 \text{ km/h} $$
+
+**Odgovor:** Hitrost čolna je 8 km/h, hitrost reke 4 km/h.
+</Solution>
+</Problem>
+
+<Problem title="Naloga 8: Graf hitrosti (risanje)" difficulty={1}>
+Telo se giblje takole:
+- 2 uri miruje.
+- 1 uro se giblje s hitrostjo 60 km/h.
+- 1 uro se giblje s hitrostjo -60 km/h (nazaj).
+
+Nariši graf $v(t)$ in izračunaj povprečno hitrost v celotnem času.
+
+<Solution>
+**Graf:**
+<Graph 
+  title="Graf hitrosti v(t)"
+  xKey="t"
+  yKey="v"
+  xLabel="t [h]"
+  yLabel="v [km/h]"
+  color="#ef4444"
+  data={[
+    { t: 0, v: 0 },
+    { t: 2, v: 0 },
+    { t: 2.01, v: 60 },
+    { t: 3, v: 60 },
+    { t: 3.01, v: -60 },
+    { t: 4, v: -60 },
+    { t: 4.01, v: 0 }
+  ]}
+/>
+
+**Povprečna hitrost:**
+Celotna pot (premik):
+$$ s = 0 + 60 \cdot 1 + (-60) \cdot 1 = 0 \text{ km} $$
+$$ \bar{v} = \frac{s}{t} = 0 \text{ km/h} $$
+
+(Opomba: Povprečna *hitrost* je 0, povprečna *hitrost na poti* (speed) pa bi bila $120/4 = 30$ km/h).
+</Solution>
+</Problem>
+
+<Problem title="Naloga 9: Zamuda" difficulty={1}>
+Vlak ima 15 minut zamude. Da bi nadoknadil zamudo na 100 km dolgi progi, mora povečati hitrost. Običajna hitrost je 80 km/h. Kolikšna mora biti nova hitrost?
+
+<Solution>
+**Podatki:**
+- $s = 100 \text{ km}$
+- $v_{star} = 80 \text{ km/h}$
+- $\Delta t = 15 \text{ min} = 0,25 \text{ h}$ (čas, ki ga mora "prihraniti")
+
+**Račun:**
+Redni čas vožnje:
+$$ t_1 = \frac{100}{80} = 1,25 \text{ h} $$
+Nov čas mora biti krajši za 15 min, torej:
+$$ t_2 = 1,25 \text{ h} - 0,25 \text{ h} = 1 \text{ h} $$
+Nova hitrost:
+$$ v_{nov} = \frac{100 \text{ km}}{1 \text{ h}} = 100 \text{ km/h} $$
+
+**Odgovor:** Voziti mora 100 km/h.
+</Solution>
+</Problem>
+
+<Problem title="Naloga 10: Povprečna hitrost" difficulty={2}>
+Avto prevozi prvo polovico poti s hitrostjo $40 \text{ km/h}$, drugo polovico pa s hitrostjo $60 \text{ km/h}$. Kolikšna je povprečna hitrost na celotni poti?
+
+<Solution>
+**Pazi:** Povprečna hitrost NI aritmetična sredina!
+
+**Izpeljava:**
+$$ \bar{v} = \frac{s_{skupaj}}{t_{skupaj}} = \frac{2s}{t_1 + t_2} $$
+(kjer je $s$ dolžina polovice poti)
+
+$$ t_1 = \frac{s}{v_1}, \quad t_2 = \frac{s}{v_2} $$
+
+$$ \bar{v} = \frac{2s}{\frac{s}{v_1} + \frac{s}{v_2}} = \frac{2}{\frac{1}{v_1} + \frac{1}{v_2}} $$
+$$ \bar{v} = \frac{2 v_1 v_2}{v_1 + v_2} $$
+
+**Račun:**
+$$ \bar{v} = \frac{2 \cdot 40 \cdot 60}{40 + 60} = \frac{4800}{100} = 48 \text{ km/h} $$
+
+**Odgovor:** Povprečna hitrost je 48 km/h.
+</Solution>
+</Problem>
+
+<Problem title="Naloga 11: Graf hitrosti (pot)" difficulty={1}>
+Na grafu je prikazana hitrost kolesarja v odvisnosti od časa. Izračunaj celotno pot, ki jo je prevozil.
+
+<Graph 
+  title="Graf hitrosti v(t)"
+  xKey="t"
+  yKey="v"
+  yLabel="v [m/s]"
+  data={[
+    { t: 0, v: 10 },
+    { t: 5, v: 10 },
+    { t: 5.01, v: 0 },
+    { t: 7, v: 0 },
+    { t: 7.01, v: 5 },
+    { t: 10, v: 5 }
+  ]}
+/>
+
+<Solution>
+**Razmislek:**
+Pot pri premem enakomernem gibanju je ploščina pod grafom $v(t)$.
+
+**Račun:**
+1. del (0-5s): $s_1 = 10 \text{ m/s} \cdot 5 \text{ s} = 50 \text{ m}$
+2. del (5-7s): $s_2 = 0 \text{ m/s} \cdot 2 \text{ s} = 0 \text{ m}$
+3. del (7-10s): $s_3 = 5 \text{ m/s} \cdot 3 \text{ s} = 15 \text{ m}$
+
+Skupna pot:
+$$ s = 50 + 0 + 15 = 65 \text{ m} $$
+</Solution>
+</Problem>
+
+<Problem title="Naloga 12: Risanje grafa lege" difficulty={1}>
+Telo se giblje takole:
+1. 10 sekund se giblje enakomerno s hitrostjo 5 m/s.
+2. 5 sekund miruje.
+3. 5 sekund se vrača s hitrostjo 10 m/s.
+Nariši graf lege $x(t)$.
+
+<Solution>
+**Točke za graf:**
+- $t=0, x=0$
+- $t=10$: $x = 5 \cdot 10 = 50 \text{ m}$. Točka (10, 50).
+- $t=15$: Miruje, lega se ne spremeni. Točka (15, 50).
+- $t=20$: Vrača se ($v=-10$). $\Delta x = -10 \cdot 5 = -50 \text{ m}$. Končna lega $50 - 50 = 0$. Točka (20, 0).
+
+<Graph 
+  title="Graf lege x(t)"
+  xKey="t"
+  yKey="x"
+  yLabel="x [m]"
+  data={[
+    { t: 0, x: 0 },
+    { t: 10, x: 50 },
+    { t: 15, x: 50 },
+    { t: 20, x: 0 }
+  ]}
+/>
+</Solution>
+</Problem>
+
+<Problem title="Naloga 13: Srečanje na grafu" difficulty={1}>
+Spodnji graf prikazuje lego dveh teles ($A$ in $B$) v odvisnosti od časa. Odčitaj, kdaj in kje se telesi srečata.
+
+<Graph 
+  title="Graf lege x(t) za telesi A in B"
+  xKey="t"
+  yKey="x"
+  yLabel="x [m]"
+  data={[
+    { t: 0, x: 0 },
+    { t: 10, x: 100 },
+  ]}
+  color="#2563eb"
+/>
+*(Opomba: Zamisli si še drugo črto, ki gre od točke (0, 100) do (10, 0). Tu rišemo samo eno zaradi omejitev komponente, a naloga zahteva razmislek o presečišču).*
+
+Če ima telo A enačbo $x_A = 10t$ in telo B enačbo $x_B = 100 - 10t$, kdaj se srečata?
+
+<Solution>
+**Grafična rešitev:**
+Telo A gre od 0 do 100 m v 10 s.
+Telo B gre od 100 do 0 m v 10 s.
+Premici se sekata točno na sredini.
+
+**Račun:**
+$$ x_A = x_B $$
+$$ 10t = 100 - 10t $$
+$$ 20t = 100 \Rightarrow t = 5 \text{ s} $$
+
+Lega srečanja:
+$$ x = 10 \cdot 5 = 50 \text{ m} $$
+
+**Odgovor:** Srečata se po 5 sekundah na 50 metrih.
+</Solution>
+</Problem>
+
+</ProblemSet>

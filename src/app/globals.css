@@ -1,0 +1,79 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Print Styles */
+@media print {
+  @page {
+    margin: 2cm;
+  }
+
+  body {
+    background: white !important;
+    color: black !important;
+  }
+
+  /* Hide UI elements */
+  nav,
+  button,
+  .sidebar,
+  .no-print {
+    display: none !important;
+  }
+
+  /* Reset main container widths */
+  .max-w-3xl {
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Ensure all problems are visible */
+  .problem-container {
+    display: block !important;
+    break-inside: avoid;
+    page-break-inside: avoid;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  /* Typography for "LaTeX look" */
+  .prose {
+    font-family: "Latin Modern Roman", "Computer Modern", "Times New Roman", serif;
+    font-size: 12pt;
+    line-height: 1.5;
+    color: black !important;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: "Latin Modern Sans", "Computer Modern Sans", "Helvetica", sans-serif;
+    color: black !important;
+  }
+}
