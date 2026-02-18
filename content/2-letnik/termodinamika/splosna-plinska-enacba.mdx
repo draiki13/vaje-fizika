@@ -4,7 +4,7 @@ section: "2. Letnik"
 subsection: "Zgradba snovi in temperatura"
 ---
 
-Splošna plinska enačba povezuje tlak, prostornino, temperaturo in količino idealnega plina v enem samem izrazu. Uporabljamo jo, ko nas zanimajo absolutne vrednosti stanja plina.
+Splošna plinska enačba povezuje tlak, prostornina, temperaturo in količino idealnega plina v enem samem izrazu. Uporabljamo jo, ko nas zanimajo absolutne vrednosti stanja plina.
 
 <EquationBox>
   <EqRow>
@@ -29,11 +29,10 @@ Splošna plinska enačba povezuje tlak, prostornino, temperaturo in količino id
   </EqRow>
 </EquationBox>
 
-## Naloge za utrjevanje
 
 <ProblemSet>
 
-<Problem title="Naloga 1: Osnovni izračun" difficulty={0}>
+<Problem title="1. Osnovni izračun" difficulty={0}>
 V jeklenki s prostornino 50 litrov je helij pri tlaku 150 barov in temperaturi $20^\circ \text{C}$. Kolikšna je množina helija v jeklenki?
 
 <Solution>
@@ -48,7 +47,24 @@ $$ n = \frac{pV}{RT} = \frac{15 \cdot 10^6 \cdot 0,05}{8,31 \cdot 293} \approx 3
 </Solution>
 </Problem>
 
-<Problem title="Naloga 2: Masa plina" difficulty={1}>
+<Problem title="2. Temperatura v balonu" difficulty={0}>
+Kolikšna je absolutna temperatura v balonu s prostornino $1 \text{ m}^3$, če je v njem $40$ molov plina pri tlaku $10^5 \text{ Pa}$?
+
+<Solution>
+**Podatki:**
+- $V = 1 \text{ m}^3$
+- $n = 40 \text{ mol}$
+- $p = 10^5 \text{ Pa}$
+- $R = 8,31 \text{ J/(mol K)}$
+
+**Račun:**
+$$ pV = nRT \implies T = \frac{pV}{nR} $$
+$$ T = \frac{10^5 \cdot 1}{40 \cdot 8,31} \approx 300,8 \text{ K} $$
+To je približno $28^\circ \text{C}$.
+</Solution>
+</Problem>
+
+<Problem title="3. Masa plina" difficulty={1}>
 Kolikšna je masa kisika ($O_2$, $M = 32 \text{ g/mol}$) v posodi s prostornino 10 litrov pri tlaku 5 barov in temperaturi $27^\circ \text{C}$?
 
 <Solution>
@@ -64,7 +80,7 @@ $$ m = \frac{pVM}{RT} = \frac{5 \cdot 10^5 \cdot 0,01 \cdot 0,032}{8,31 \cdot 30
 </Solution>
 </Problem>
 
-<Problem title="Naloga 3: Gostota plina" difficulty={1}>
+<Problem title="4. Gostota plina" difficulty={1}>
 Izračunaj gostoto dušika ($N_2$, $M = 28 \text{ g/mol}$) pri normalnih pogojih ($p = 1,013 \text{ bar}$, $T = 273 \text{ K}$).
 
 <Solution>
@@ -77,7 +93,7 @@ $$ \rho = \frac{101325 \text{ Pa} \cdot 0,028 \text{ kg/mol}}{8,31 \cdot 273} \a
 </Solution>
 </Problem>
 
-<Problem title="Naloga 4: Število molekul" difficulty={1}>
+<Problem title="5. Število molekul" difficulty={1}>
 V sobi z dimenzijami $4 \text{ m} \times 5 \text{ m} \times 3 \text{ m}$ je zrak pri normalnem tlaku in temperaturi $20^\circ \text{C}$. Koliko molekul zraka je v sobi?
 
 <Solution>
@@ -90,6 +106,21 @@ V sobi z dimenzijami $4 \text{ m} \times 5 \text{ m} \times 3 \text{ m}$ je zrak
 **Račun:**
 Množina snovi: $n = \frac{pV}{RT} = \frac{10^5 \cdot 60}{8,31 \cdot 293} \approx 2464 \text{ mol}$
 Število molekul: $N = n \cdot N_A = 2464 \cdot 6,022 \cdot 10^{23} \approx 1,48 \cdot 10^{27}$
+</Solution>
+</Problem>
+
+<Problem title="6. Množina v majhni posodi" difficulty={1}>
+V posodici s prostornino $250 \text{ cm}^3$ je zrak pri sobni temperaturi ($20^\circ \text{C}$) in normalnem tlaku ($10^5 \text{ Pa}$). Koliko molov zraka je v posodici?
+
+<Solution>
+**Podatki:**
+- $V = 250 \text{ cm}^3 = 2,5 \cdot 10^{-4} \text{ m}^3$
+- $T = 293 \text{ K}$
+- $p = 10^5 \text{ Pa}$
+
+**Račun:**
+$$ n = \frac{pV}{RT} = \frac{10^5 \cdot 2,5 \cdot 10^{-4}}{8,31 \cdot 293} $$
+$$ n = \frac{25}{2434,8} \approx 0,0103 \text{ mol} = 10,3 \text{ mmol} $$
 </Solution>
 </Problem>
 

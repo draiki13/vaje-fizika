@@ -1,0 +1,111 @@
+---
+title: "Magnetno polje vodnika in tuljave"
+section: "3. letnik"
+subsection: "Magnetno polje"
+---
+
+<EquationBox>
+  <EqRow>
+    $$ B = \frac{\mu_0 I}{2\pi r} $$
+
+    **Magnetno polje vodnika**: Gostota polja na razdalji $r$ od vodnika s tokom $I$.
+  </EqRow>
+  <EqRow>
+    $$ B = \mu_0 \frac{NI}{l} $$
+
+    **Magnetno polje tuljave**: Gostota polja v tuljavi z $N$ zavoji, dolžino $l$ in tokom $I$.
+  </EqRow>
+</EquationBox>
+
+
+<ProblemSet>
+
+<Problem title="1. Polje ob ravnem vodniku" difficulty={0}>
+Po dolgem ravnem vodniku teče tok $5 \, \text{A}$. Kolikšna je gostota magnetnega polja na razdalji $10 \, \text{cm}$ od vodnika?
+
+<Solution>
+**Podatki:**
+- $I = 5 \, \text{A}$
+- $r = 0,1 \, \text{m}$
+- $\mu_0 = 4\pi \cdot 10^{-7} \, \text{Vs/Am}$
+
+**Račun:**
+$$ B = \frac{\mu_0 I}{2\pi r} = \frac{4\pi \cdot 10^{-7} \cdot 5}{2\pi \cdot 0,1} = \frac{10^{-6} \cdot 5}{0,1} = 10^{-5} \, \text{T} = 10 \, \mu\text{T} $$
+</Solution>
+</Problem>
+
+<Problem title="2. Polje zavojem tuljave" difficulty={0}>
+Tuljava dolžine $10 \, \text{cm}$ ima $200$ zavojev. Kolikšna je gostota magnetnega polja v njeni notranjosti, če skoznjo teče tok $0,5 \, \text{A}$?
+
+<Solution>
+**Podatki:**
+- $l = 0,1 \, \text{m}$
+- $N = 200$
+- $I = 0,5 \, \text{A}$
+
+**Račun:**
+$$ B = \mu_0 \frac{NI}{l} = \mu_0 \frac{200 \cdot 0,5}{0,1} = \mu_0 \cdot 1000 $$
+$$ B = 4\pi \cdot 10^{-7} \cdot 1000 = 4\pi \cdot 10^{-4} \approx 1,26 \text{ mT} $$
+</Solution>
+</Problem>
+
+<Problem title="3. Tok v tuljavi" difficulty={1}>
+V notranjosti tuljave z dolžino $20 \, \text{cm}$ in $500$ zavoji želimo ustvariti magnetno polje gostote $2 \, \text{mT}$. Kolikšen tok mora teči skozi tuljavo?
+
+<Solution>
+**Podatki:**
+- $l = 0,2 \, \text{m}$
+- $N = 500$
+- $B = 2 \cdot 10^{-3} \, \text{T}$
+
+**Račun:**
+$$ B = \mu_0 \frac{NI}{l} \implies I = \frac{B \cdot l}{\mu_0 \cdot N} $$
+$$ I = \frac{2 \cdot 10^{-3} \cdot 0,2}{4\pi \cdot 10^{-7} \cdot 500} = \frac{0,0004}{0,000628} \approx 0,637 \, \text{A} $$
+</Solution>
+</Problem>
+
+<Problem title="4. Primerjava dveh točk" difficulty={1}>
+Gostota magnetnega polja na razdalji $r$ od vodnika je $B_0$. Kolikšna postane gostota polja, če razdaljo potrojimo, tok pa podvojimo?
+
+<Solution>
+**Razmislek:**
+Vemo, da je $B \propto \frac{I}{r}$.
+Če $I \to 2I$ in $r \to 3r$, potem:
+$$ B_{nova} \propto \frac{2I}{3r} = \frac{2}{3} \cdot \frac{I}{r} $$
+Končno polje bo $\frac{2}{3} B_0$.
+</Solution>
+</Problem>
+
+<Problem title="5. Razdalja od vodnika" difficulty={1}>
+Na kolikšni razdalji od dolgega ravnega vodnika s tokom $10 \, \text{A}$ je gostota magnetnega polja $1 \, \mu\text{T}$?
+
+<Solution>
+**Podatki:**
+- $I = 10 \, \text{A}$
+- $B = 10^{-6} \, \text{T}$
+
+**Račun:**
+$$ B = \frac{\mu_0 I}{2\pi r} \implies r = \frac{\mu_0 I}{2\pi B} $$
+$$ r = \frac{4\pi \cdot 10^{-7} \cdot 10}{2\pi \cdot 10^{-6}} = \frac{2 \cdot 10^{-6}}{10^{-6}} = 2 \text{ m} $$
+</Solution>
+</Problem>
+
+<Problem title="6. Magnetna igla in vodnik" difficulty={2}>
+Dolg vodnik je postavljen navpično. Po njem teče tok $20 \, \text{A}$ navzgor. Na razdalji $5 \, \text{cm}$ od vodnika postavimo majhno magnetno iglo. Kolikšna je rezultantna gostota polja na tem mestu, če je vodoravna komponenta zemljinega magnetnega polja $B_z = 20 \, \mu\text{T}$? Predpostavi, da je polje vodnika pravokotno na zemljino polje.
+
+<Solution>
+**Podatki:**
+- $I = 20 \, \text{A}$
+- $r = 0,05 \, \text{m}$
+- $B_z = 20 \cdot 10^{-6} \, \text{T}$
+
+**Račun:**
+Polje vodnika $B_v$:
+$$ B_v = \frac{\mu_0 I}{2\pi r} = \frac{4\pi \cdot 10^{-7} \cdot 20}{2\pi \cdot 0,05} = 8 \cdot 10^{-5} \, \text{T} = 80 \, \mu\text{T} $$
+
+Ker sta polji pravokotni, uporabimo Pitagorov izrek:
+$$ B_{rez} = \sqrt{B_v^2 + B_z^2} = \sqrt{(80 \, \mu\text{T})^2 + (20 \, \mu\text{T})^2} = \sqrt{6400 + 400} \, \mu\text{T} \approx 82,5 \, \mu\text{T} $$
+</Solution>
+</Problem>
+
+</ProblemSet>

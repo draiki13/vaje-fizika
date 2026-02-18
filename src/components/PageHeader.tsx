@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { ChevronRight, Printer } from "lucide-react";
 
 interface PageHeaderProps {
@@ -20,10 +21,17 @@ export function PageHeader({ title, slug, onPrint }: PageHeaderProps) {
 
     return (
         <header className="mb-8 no-print">
-            <nav className="flex items-center gap-2 text-sm text-gray-500 mb-4">
+            <nav className="flex items-center gap-2 text-sm text-gray-500 mb-4 overflow-x-auto whitespace-nowrap pb-1">
+                <Link href="/" className="hover:text-blue-600">Domov</Link>
+                <ChevronRight size={14} />
                 {slug.map((part, index) => (
                     <div key={part} className="flex items-center gap-2">
-                        <span className="capitalize">{part.replace(/-/g, ' ')}</span>
+                        <Link
+                            href={`/${slug.slice(0, index + 1).join('/')}`}
+                            className={`hover:text-blue-600 capitalize ${index === slug.length - 1 ? 'text-gray-900 dark:text-gray-100 font-medium' : ''}`}
+                        >
+                            {part.replace(/-/g, ' ')}
+                        </Link>
                         {index < slug.length - 1 && <ChevronRight size={14} />}
                     </div>
                 ))}

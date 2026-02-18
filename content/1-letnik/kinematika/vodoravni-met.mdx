@@ -4,6 +4,56 @@ section: "1. Letnik"
 subsection: "Kinematika"
 ---
 
-# Vodoravni met
+<EquationBox>
+  <EqRow>
+    $$ x(t) = v_0 t $$
 
-Tukaj bodo naloge za vodoravni met.
+    **Vodoravna lega (enakomerno gibanje)**: Razdalja, ki jo telo prepotuje v vodoravni smeri.
+  </EqRow>
+  <EqRow>
+    $$ y(t) = h - \frac{gt^2}{2} $$
+
+    **Navpična višina (prosti pad)**: Trenutna višina telesa nad tlemi, če je bilo vrženo z višine $h$.
+  </EqRow>
+  <EqRow>
+    $$ D = v_0 \sqrt{\frac{2h}{g}} $$
+
+    **Domet**: Celotna vodoravna razdalja do padca na tla.
+  </EqRow>
+</EquationBox>
+
+<ProblemSet>
+
+<Problem title="1. Domet krogle" difficulty={0}>
+Kroglo vržemo vodoravno z višine $20 \text{ m}$ s hitrostjo $15 \text{ m/s}$. Kako daleč od vznožja pade na tla? ($g \approx 10 \text{ m/s}^2$)
+
+<Solution>
+**Podatki:**
+- $h = 20 \text{ m}$
+- $v_0 = 15 \text{ m/s}$
+
+**Čas padanja:**
+$$ t = \sqrt{\frac{2h}{g}} = \sqrt{\frac{40}{10}} = 2 \text{ s} $$
+
+**Domet:**
+$$ D = v_0 \cdot t = 15 \cdot 2 = 30 \text{ m} $$
+</Solution>
+</Problem>
+
+<Problem title="2. Hitrost meta" difficulty={1}>
+S skale vržemo kamen vodoravno. Kamen pade v vodo $40 \text{ m}$ stran od skale čez 4 sekunde. S kolikšno hitrostjo smo ga vrgli in kako visoka je skala?
+
+<Solution>
+**Podatki:**
+- $D = 40 \text{ m}$
+- $t = 4 \text{ s}$
+
+**Vodoravna hitrost:**
+$$ v_0 = \frac{D}{t} = \frac{40}{4} = 10 \text{ m/s} $$
+
+**Višina skale:**
+$$ h = \frac{gt^2}{2} = \frac{10 \cdot 16}{2} = 80 \text{ m} $$
+</Solution>
+</Problem>
+
+</ProblemSet>

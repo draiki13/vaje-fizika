@@ -39,7 +39,7 @@ export function Sidebar() {
 
 function NavGroup({ item, level }: { item: NavItem; level: number }) {
     const pathname = usePathname();
-    const [isExpanded, setIsExpanded] = useState(true); // Default expanded for now
+    const [isExpanded, setIsExpanded] = useState(pathname.startsWith(`/${item.slug}`));
 
     const hasChildren = item.children && item.children.length > 0;
     // Construct full path logic would go here, but for now we assume structure matches config
@@ -84,9 +84,8 @@ function NavGroup({ item, level }: { item: NavItem; level: number }) {
 
 function NavLink({ item, parentPath }: { item: NavItem; parentPath: string }) {
     const pathname = usePathname();
-    const [isExpanded, setIsExpanded] = useState(true);
-
     const fullPath = `${parentPath}/${item.slug}`;
+    const [isExpanded, setIsExpanded] = useState(pathname.startsWith(fullPath));
     const isActive = pathname === fullPath;
     const hasChildren = item.children && item.children.length > 0;
 
@@ -121,8 +120,8 @@ function NavLink({ item, parentPath }: { item: NavItem; parentPath: string }) {
         <Link
             href={fullPath}
             className={`block px-2 py-1.5 text-sm rounded-md transition-colors ${isActive
-                    ? "bg-blue-50 text-blue-600 dark:bg-blue-900/20 dark:text-blue-400 font-medium"
-                    : "text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-gray-100"
+                ? "bg-blue-50 text-blue-600 dark:bg-blue-900/20 dark:text-blue-400 font-medium"
+                : "text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-gray-100"
                 }`}
         >
             {item.title}

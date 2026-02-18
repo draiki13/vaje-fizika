@@ -29,11 +29,10 @@ Plinski zakoni opisujejo, kako se spreminjajo tlak, prostornina in temperatura d
   </EqRow>
 </EquationBox>
 
-## Naloge za utrjevanje
 
 <ProblemSet>
 
-<Problem title="Naloga 1: Izotermno stiskanje" difficulty={0}>
+<Problem title="1. Izotermno stiskanje" difficulty={0}>
 Zrak v črpalki s prostornino $400 \text{ cm}^3$ stisnemo na $100 \text{ cm}^3$ pri konstantni temperaturi. Kolikšen je končni tlak, če je bil začetni tlak 1 bar?
 
 <Solution>
@@ -45,7 +44,26 @@ $$ p_2 = \frac{p_1 V_1}{V_2} = \frac{1 \text{ bar} \cdot 400 \text{ cm}^3}{100 \
 </Solution>
 </Problem>
 
-<Problem title="Naloga 2: Izobarno segrevanje" difficulty={1}>
+<Problem title="2. Segrevanje v zaprti posodi" difficulty={0}>
+Plin v zaprti posodi s konstantno prostornino segrejemo z $20^\circ \text{C}$ na $80^\circ \text{C}$. Za kolikšen faktor se poveča tlak v posodi?
+
+<Solution>
+**Podatki:**
+- $T_1 = 20^\circ \text{C} = 293 \text{ K}$
+- $T_2 = 80^\circ \text{C} = 353 \text{ K}$
+- $V = konst.$
+
+**Razmislek:**
+Pri izohorni spremembi velja $\frac{p_1}{T_1} = \frac{p_2}{T_2}$.
+$$ \frac{p_2}{p_1} = \frac{T_2}{T_1} $$
+
+**Račun:**
+$$ \frac{p_2}{p_1} = \frac{353}{293} \approx 1,20 $$
+Tlak se poveča za faktor 1,20 (ali za 20 %).
+</Solution>
+</Problem>
+
+<Problem title="3. Izobarno segrevanje" difficulty={1}>
 Vremenski balon ima pri temperaturi $15^\circ \text{C}$ prostornino $2 \text{ m}^3$. Na kolikšno prostornino se napihne, ko se na soncu segreje na $40^\circ \text{C}$? Tlak v balonu se ne spremeni.
 
 <Solution>
@@ -60,7 +78,7 @@ $$ V_2 = V_1 \cdot \frac{T_2}{T_1} = 2 \text{ m}^3 \cdot \frac{313}{288} \approx
 </Solution>
 </Problem>
 
-<Problem title="Naloga 3: Izohorno segrevanje" difficulty={1}>
+<Problem title="4. Izohorno segrevanje" difficulty={1}>
 V zaprti posodi je plin pri tlaku 200 kPa in temperaturi $0^\circ \text{C}$. Do kolikšne temperature bi morali segreti plin, da bi se tlak podvojil?
 
 <Solution>
@@ -75,23 +93,7 @@ V Celzijih: $t_2 = 546 - 273 = 273^\circ \text{C}$.
 </Solution>
 </Problem>
 
-<Problem title="Naloga 4: Sprememba vseh spremenljivk" difficulty={2}>
-Mehurček zraka s prostornino $1 \text{ cm}^3$ se dvigne z dna jezera globine 20 m na površino. Na dnu je temperatura $7^\circ \text{C}$, na površini pa $22^\circ \text{C}$. Kolikšna je končna prostornina mehurčka?
-
-<Solution>
-**Podatki:**
-- $V_1 = 1 \text{ cm}^3$
-- $T_1 = 280 \text{ K}$, $T_2 = 295 \text{ K}$
-- $p_2 = 1 \text{ bar} = 10^5 \text{ Pa}$ (zunanji tlak)
-- $p_1 = p_2 + \rho gh = 10^5 + 1000 \cdot 10 \cdot 20 = 3 \cdot 10^5 \text{ Pa}$
-
-**Račun:**
-Uporabimo $\frac{p_1 V_1}{T_1} = \frac{p_2 V_2}{T_2}$:
-$$ V_2 = \frac{p_1 V_1 T_2}{p_2 T_1} = \frac{3 \cdot 10^5 \cdot 1 \cdot 295}{10^5 \cdot 280} \approx 3,16 \text{ cm}^3 $$
-</Solution>
-</Problem>
-
-<Problem title="Naloga 5: Segrevanje gume" difficulty={1}>
+<Problem title="5. Segrevanje gume" difficulty={1}>
 Avtomobilsko grmo s prostornino 30 litrov napolnimo z zrakom do tlaka 2,2 bara pri $10^\circ \text{C}$. Med vožnjo se guma segreje in tlak naraste na 2,5 bara. Za koliko se je segrel zrak v gumi? (Privzemi, da je prostornina gume konstantna).
 
 <Solution>
@@ -107,7 +109,7 @@ Zrak se je segrel za približno $39^\circ \text{C}$.
 </Solution>
 </Problem>
 
-<Problem title="Naloga 6: Interpretacija grafa" difficulty={1}>
+<Problem title="6. Interpretacija grafa" difficulty={1}>
 Na $p-V$ diagramu je prikazana izotermna sprememba idealnega plina. V stanju A je tlak $4 \cdot 10^5 \text{ Pa}$ in prostornina $2 \text{ dm}^3$. Kolikšen je tlak v stanju B, kjer je prostornina $8 \text{ dm}^3$?
 
 <Solution>
@@ -118,6 +120,38 @@ $$ p_A V_A = p_B V_B $$
 **Račun:**
 $$ p_B = \frac{p_A V_A}{V_B} = \frac{4 \cdot 10^5 \text{ Pa} \cdot 2 \text{ dm}^3}{8 \text{ dm}^3} = 1 \cdot 10^5 \text{ Pa} $$
 Tlak se zmanjša na četrtino začetnega, ker se je prostornina 4-krat povečala.
+</Solution>
+</Problem>
+
+<Problem title="7. Raztezanje zraka" difficulty={1}>
+Zrak v valju s premičnim batom zavzema prostornino $2 \text{ l}$ pri temperaturi $300 \text{ K}$. Na kolikšno prostornino se raztegne zrak, če ga pri konstantnem tlaku segrejemo na $450 \text{ K}$?
+
+<Solution>
+**Podatki:**
+- $V_1 = 2 \text{ l}$
+- $T_1 = 300 \text{ K}$
+- $T_2 = 450 \text{ K}$
+- $p = konst.$
+
+**Račun:**
+$$ \frac{V_1}{T_1} = \frac{V_2}{T_2} \implies V_2 = V_1 \cdot \frac{T_2}{T_1} $$
+$$ V_2 = 2 \cdot \frac{450}{300} = 2 \cdot 1,5 = 3 \text{ l} $$
+</Solution>
+</Problem>
+
+<Problem title="8. Sprememba vseh spremenljivk" difficulty={2}>
+Mehurček zraka s prostornino $1 \text{ cm}^3$ se dvigne z dna jezera globine 20 m na površino. Na dnu je temperatura $7^\circ \text{C}$, na površini pa $22^\circ \text{C}$. Kolikšna je končna prostornina mehurčka?
+
+<Solution>
+**Podatki:**
+- $V_1 = 1 \text{ cm}^3$
+- $T_1 = 280 \text{ K}$, $T_2 = 295 \text{ K}$
+- $p_2 = 1 \text{ bar} = 10^5 \text{ Pa}$ (zunanji tlak)
+- $p_1 = p_2 + \rho gh = 10^5 + 1000 \cdot 10 \cdot 20 = 3 \cdot 10^5 \text{ Pa}$
+
+**Račun:**
+Uporabimo $\frac{p_1 V_1}{T_1} = \frac{p_2 V_2}{T_2}$:
+$$ V_2 = \frac{p_1 V_1 T_2}{p_2 T_1} = \frac{3 \cdot 10^5 \cdot 1 \cdot 295}{10^5 \cdot 280} \approx 3,16 \text{ cm}^3 $$
 </Solution>
 </Problem>
 

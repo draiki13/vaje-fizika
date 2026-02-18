@@ -1,0 +1,72 @@
+---
+title: "Pospeševalniki"
+section: "3. letnik"
+subsection: "Magnetno polje"
+---
+
+<EquationBox>
+  <EqRow>
+    $$ W_k = e U $$
+
+    **Delo električne sile**: Energija, ki jo dobi delec z nabojem $e$ pri napetosti $U$.
+  </EqRow>
+  <EqRow>
+    $$ f = \frac{e B}{2\pi m} $$
+
+    **Ciklotronska frekvenca**: Frekvenca kroženja delca v ciklotronu.
+  </EqRow>
+</EquationBox>
+
+
+<ProblemSet>
+
+<Problem title="1. Energija v pospeševalniku" difficulty={0}>
+Proton v linearnem pospeševalniku preleti napetost $500 \, \text{kV}$. Kolikšno kinetično energijo pridobi? Izrazi jo v eV in Joulih.
+
+<Solution>
+**Podatki:**
+- $U = 5 \cdot 10^5 \, \text{V}$
+
+**Račun:**
+V elektronvoltih:
+$$ W_k = 1e \cdot 500.000 \, \text{V} = 500 \, \text{keV} $$
+V Joulih:
+$$ W_k = 1,6 \cdot 10^{-19} \cdot 5 \cdot 10^5 = 8 \cdot 10^{-14} \, \text{J} $$
+</Solution>
+</Problem>
+
+<Problem title="2. Frekvenca ciklotrona" difficulty={1}>
+Ciklotron deluje z magnetnim poljem $1,5 \, \text{T}$. S kolikšno frekvenco se mora spreminjati električna napetost med elektrodama, da pospešuje protone ($m = 1,67 \cdot 10^{-27} \, \text{kg}$)?
+
+<Solution>
+**Podatki:**
+- $B = 1,5 \, \text{T}$
+- $m = 1,67 \cdot 10^{-27} \, \text{kg}$
+- $e = 1,6 \cdot 10^{-19} \, \text{As}$
+
+**Račun:**
+$$ f = \frac{e B}{2\pi m} = \frac{1,6 \cdot 10^{-19} \cdot 1,5}{2\pi \cdot 1,67 \cdot 10^{-27}} $$
+$$ f = \frac{2,4 \cdot 10^{-19}}{1,05 \cdot 10^{-26}} \approx 2,28 \cdot 10^7 \, \text{Hz} = 22,8 \, \text{MHz} $$
+</Solution>
+</Problem>
+
+<Problem title="3. Končna hitrost v ciklotronu" difficulty={2}>
+Protone v ciklotronu z magnetnim poljem $1 \, \text{T}$ pospešujemo do radija $0,5 \, \text{m}$. Kolikšna je njihova končna hitrost in kinetična energija?
+
+<Solution>
+**Podatki:**
+- $B = 1 \, \text{T}$
+- $r = 0,5 \, \text{m}$
+- $m = 1,67 \cdot 10^{-27} \, \text{kg}$
+
+**Račun:**
+Iz formule za radij $r = \frac{m v}{e B}$ izrazimo $v$:
+$$ v = \frac{r e B}{m} = \frac{0,5 \cdot 1,6 \cdot 10^{-19} \cdot 1}{1,67 \cdot 10^{-27}} \approx 0,48 \cdot 10^8 \, \text{m/s} = 4,8 \cdot 10^7 \, \text{m/s} $$
+
+Kinetična energija:
+$$ W_k = \frac{m v^2}{2} = \frac{1,67 \cdot 10^{-27} \cdot (4,8 \cdot 10^7)^2}{2} \approx 1,92 \cdot 10^{-12} \, \text{J} $$
+V eV: $\approx 12 \, \text{MeV}$.
+</Solution>
+</Problem>
+
+</ProblemSet>

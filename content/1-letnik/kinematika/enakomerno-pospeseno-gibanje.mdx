@@ -24,8 +24,8 @@ subsection: "Kinematika"
 
 <ProblemSet>
 
-<Problem title="Naloga 1: Pospeševanje avtomobila" difficulty={0}>
-Avtomobil spelje in pospešuje s pospeškom $2 \text{ m/s}^2$. Kolikšno hitrost doseže po 10 sekundah in kolikšno pot prevozi?
+<Problem title="1. Pospeševanje avtomobila" difficulty={0}>
+Avtomobil spelje in pospešuje s pospeškom $2 \text{ m/s}^2$. Kolikšno hitrost doseže po 10 sekundah and kolikšno pot prevozi?
 
 <Solution>
 **Podatki:**
@@ -41,7 +41,46 @@ $$ s = \frac{at^2}{2} = \frac{2 \cdot 100}{2} = 100 \text{ m} $$
 </Solution>
 </Problem>
 
-<Problem title="Naloga 2: Zaviranje" difficulty={1}>
+<Problem title="2. Letalo" difficulty={0}>
+Letalo potrebuje za vzlet hitrost $360 \text{ km/h}$. Vzletna steza je dolga 2 km. Z najmanj kolikšnim pospeškom se mora gibati?
+
+<Solution>
+**Podatki:**
+- $v = 360 \text{ km/h} = 100 \text{ m/s}$
+- $s = 2000 \text{ m}$
+- $v_0 = 0$
+
+**Račun:**
+$$ v^2 = 2as \Rightarrow a = \frac{v^2}{2s} $$
+$$ a = \frac{10000}{4000} = 2,5 \text{ m/s}^2 $$
+</Solution>
+</Problem>
+
+<Problem title="3. Padec kamna (uvod v prosti pad)" difficulty={0}>
+Z mostu spustimo kamen. V vodo pade čez 3 sekunde. Kako visoko je most? ($g \approx 10 \text{ m/s}^2$)
+
+<Solution>
+To je enakomerno pospešeno gibanje z $v_0 = 0$ in $a = g$.
+$$ h = \frac{gt^2}{2} = \frac{10 \cdot 9}{2} = 45 \text{ m} $$
+</Solution>
+</Problem>
+
+<Problem title="4. Pospeševanje motorista" difficulty={0}>
+Motorist se giblje s hitrostjo $5 \text{ m/s}$. Nato začne enakomerno pospeševati s pospeškom $1,5 \text{ m/s}^2$. Kolikšna bo njegova hitrost po 4 sekundah?
+
+<Solution>
+**Podatki:**
+- $v_0 = 5 \text{ m/s}$
+- $a = 1,5 \text{ m/s}^2$
+- $t = 4 \text{ s}$
+
+**Račun:**
+$$ v = v_0 + at $$
+$$ v = 5 + 1,5 \cdot 4 = 5 + 6 = 11 \text{ m/s} = 39,6 \text{ km/h} $$
+</Solution>
+</Problem>
+
+<Problem title="5. Zaviranje" difficulty={1}>
 Vlak vozi s hitrostjo $72 \text{ km/h}$. Pred postajo začne enakomerno zavirati in se ustavi po 200 metrih. Kolikšen je pojemek in koliko časa zavira?
 
 <Solution>
@@ -61,22 +100,116 @@ $$ v = v_0 + at \Rightarrow 0 = 20 - 1 \cdot t \Rightarrow t = 20 \text{ s} $$
 </Solution>
 </Problem>
 
-<Problem title="Naloga 3: Letalo" difficulty={0}>
-Letalo potrebuje za vzlet hitrost $360 \text{ km/h}$. Vzletna steza je dolga 2 km. Z najmanj kolikšnim pospeškom se mora gibati?
+<Problem title="6. Graf hitrosti (branje)" difficulty={1}>
+Graf $v(t)$ kaže, da hitrost telesa v 5 sekundah naraste od 0 do 10 m/s, nato se 5 sekund giblje enakomerno, nato pa v 5 sekundah ustavi. Nariši graf $a(t)$ in izračunaj celotno pot.
 
 <Solution>
-**Podatki:**
-- $v = 360 \text{ km/h} = 100 \text{ m/s}$
-- $s = 2000 \text{ m}$
-- $v_0 = 0$
+**Pospeški:**
+1. del (0-5s): $a = \frac{10}{5} = 2 \text{ m/s}^2$
+2. del (5-10s): $a = 0$
+3. del (10-15s): $a = \frac{0-10}{5} = -2 \text{ m/s}^2$
 
-**Račun:**
-$$ v^2 = 2as \Rightarrow a = \frac{v^2}{2s} $$
-$$ a = \frac{10000}{4000} = 2,5 \text{ m/s}^2 $$
+**Pot:**
+Pot je ploščina pod grafom $v(t)$.
+Lik je trapez.
+$$ s = \frac{(15 + 5) \cdot 10}{2} = 100 \text{ m} $$
 </Solution>
 </Problem>
 
-<Problem title="Naloga 4: Dve telesi" difficulty={2}>
+<Problem title="7. Graf hitrosti (pospešek)" difficulty={1}>
+Graf prikazuje hitrost avtomobila, ki enakomerno pospešuje. Izračunaj pospešek in prevoženo pot v 4 sekundah.
+
+<Graph 
+  title="Graf hitrosti v(t)"
+  xKey="t"
+  yKey="v"
+  yLabel="v [m/s]"
+  data={[
+    { t: 0, v: 0 },
+    { t: 4, v: 20 }
+  ]}
+/>
+
+<Solution>
+**Pospešek:**
+Naklon premice na grafu $v(t)$ je pospešek.
+$$ a = \frac{\Delta v}{\Delta t} = \frac{20 - 0}{4} = 5 \text{ m/s}^2 $$
+
+**Pot:**
+Pot je ploščina pod grafom (trikotnik).
+$$ s = \frac{v \cdot t}{2} = \frac{20 \cdot 4}{2} = 40 \text{ m} $$
+</Solution>
+</Problem>
+
+<Problem title="8. Risanje v(t)" difficulty={1}>
+Telo 5 sekund miruje, nato 5 sekund pospešuje do hitrosti 10 m/s in se nato 5 sekund giblje s to hitrostjo. Nariši graf $v(t)$.
+
+<Solution>
+**Točke:**
+1. 0-5s: $v=0$. (0,0) do (5,0).
+2. 5-10s: Pospešuje do 10. (5,0) do (10,10).
+3. 10-15s: Enakomerno. (10,10) do (15,10).
+
+<Graph 
+  title="Graf hitrosti v(t)"
+  xKey="t"
+  yKey="v"
+  yLabel="v [m/s]"
+  data={[
+    { t: 0, v: 0 },
+    { t: 5, v: 0 },
+    { t: 10, v: 10 },
+    { t: 15, v: 10 }
+  ]}
+/>
+</Solution>
+</Problem>
+
+<Problem title="9. Graf pospeška" difficulty={1}>
+Spodnji graf prikazuje pospešek telesa. Telo začne iz mirovanja. Kolikšna je hitrost po 10 sekundah?
+
+<Graph 
+  title="Graf pospeška a(t)"
+  xKey="t"
+  yKey="a"
+  yLabel="a [m/s²]"
+  type="stepAfter"
+  data={[
+    { t: 0, a: 2 },
+    { t: 5, a: 2 },
+    { t: 5.01, a: 0 },
+    { t: 10, a: 0 }
+  ]}
+/>
+
+<Solution>
+**Razmislek:**
+Sprememba hitrosti je ploščina pod grafom $a(t)$.
+
+**Račun:**
+1. del (0-5s): $a=2$. Ploščina pravokotnika: $\Delta v_1 = 2 \cdot 5 = 10 \text{ m/s}$.
+2. del (5-10s): $a=0$. Hitrost se ne spreminja.
+
+Končna hitrost: $v = 0 + 10 = 10 \text{ m/s}$.
+</Solution>
+</Problem>
+
+<Problem title="10. Pot pri zaviranju" difficulty={1}>
+Smučar vozi s hitrostjo $12 \text{ m/s}$. Ko zagleda oviro, začne zavirati s pojemkom $2 \text{ m/s}^2$. Kolikšno pot prevozi v 3 sekundah od začetka zaviranja?
+
+<Solution>
+**Podatki:**
+- $v_0 = 12 \text{ m/s}$
+- $a = -2 \text{ m/s}^2$ (pojemek)
+- $t = 3 \text{ s}$
+
+**Račun:**
+$$ s = v_0 t + \frac{at^2}{2} $$
+$$ s = 12 \cdot 3 + \frac{-2 \cdot 3^2}{2} = 36 - 9 = 27 \text{ m} $$
+</Solution>
+</Problem>
+
+<Problem title="11. Dve telesi" difficulty={2}>
 Prvi avto spelje s pospeškom $2 \text{ m/s}^2$. Dve sekundi kasneje za njim spelje drugi avto s pospeškom $3 \text{ m/s}^2$. Kdaj in kje drugi avto dohiti prvega?
 
 <Solution>
@@ -106,23 +239,7 @@ $$ s = \frac{2 \cdot (10,9)^2}{2} \approx 119 \text{ m} $$
 </Solution>
 </Problem>
 
-<Problem title="Naloga 5: Graf hitrosti (branje)" difficulty={1}>
-Graf $v(t)$ kaže, da hitrost telesa v 5 sekundah naraste od 0 do 10 m/s, nato se 5 sekund giblje enakomerno, nato pa v 5 sekundah ustavi. Nariši graf $a(t)$ in izračunaj celotno pot.
-
-<Solution>
-**Pospeški:**
-1. del (0-5s): $a = \frac{10}{5} = 2 \text{ m/s}^2$
-2. del (5-10s): $a = 0$
-3. del (10-15s): $a = \frac{0-10}{5} = -2 \text{ m/s}^2$
-
-**Pot:**
-Pot je ploščina pod grafom $v(t)$.
-Lik je trapez.
-$$ s = \frac{(15 + 5) \cdot 10}{2} = 100 \text{ m} $$
-</Solution>
-</Problem>
-
-<Problem title="Naloga 6: Reakcijski čas" difficulty={2}>
+<Problem title="12. Reakcijski čas" difficulty={2}>
 Voznik vozi s hitrostjo 54 km/h. Na cesti zagleda oviro. Njegov reakcijski čas je 0,8 s (v tem času vozi enakomerno), nato začne zavirati s pojemkom $5 \text{ m/s}^2$. Kolikšna je ustavna pot?
 
 <Solution>
@@ -144,16 +261,7 @@ $$ s = 12 + 22,5 = 34,5 \text{ m} $$
 </Solution>
 </Problem>
 
-<Problem title="Naloga 7: Padec kamna (uvod v prosti pad)" difficulty={0}>
-Z mostu spustimo kamen. V vodo pade čez 3 sekunde. Kako visoko je most? ($g \approx 10 \text{ m/s}^2$)
-
-<Solution>
-To je enakomerno pospešeno gibanje z $v_0 = 0$ in $a = g$.
-$$ h = \frac{gt^2}{2} = \frac{10 \cdot 9}{2} = 45 \text{ m} $$
-</Solution>
-</Problem>
-
-<Problem title="Naloga 8: Vmesni čas" difficulty={2}>
+<Problem title="13. Vmesni čas" difficulty={2}>
 Telo se giblje s pospeškom $2 \text{ m/s}^2$. V kateri sekundi opravi pot 5 metrov? (Predpostavi $v_0 = 0$).
 
 <Solution>
@@ -168,7 +276,7 @@ $$ 2n - 1 = 5 \Rightarrow 2n = 6 \Rightarrow n = 3 $$
 </Solution>
 </Problem>
 
-<Problem title="Naloga 9: Graf poti (risanje)" difficulty={2}>
+<Problem title="14. Graf poti (risanje)" difficulty={2}>
 Nariši graf $s(t)$ za telo, ki 2 sekundi pospešuje z $1 \text{ m/s}^2$, nato 2 sekundi vozi enakomerno, nato pa se v 2 sekundah ustavi.
 
 <Solution>
@@ -179,7 +287,7 @@ Nariši graf $s(t)$ za telo, ki 2 sekundi pospešuje z $1 \text{ m/s}^2$, nato 2
 </Solution>
 </Problem>
 
-<Problem title="Naloga 10: Policist" difficulty={2}>
+<Problem title="15. Policist" difficulty={2}>
 Voznik pelje mimo policista s konstantno hitrostjo 20 m/s. Policist začne pospeševati 2 sekundi kasneje s pospeškom $4 \text{ m/s}^2$. Kdaj ujame voznika?
 
 <Solution>
@@ -198,84 +306,6 @@ $$ 10t = t^2 - 4t + 4 $$
 $$ t^2 - 14t + 4 = 0 $$
 $$ t = \frac{14 \pm \sqrt{196 - 16}}{2} = \frac{14 \pm 13,4}{2} $$
 Rešitev $t \approx 13,7 \text{ s}$.
-</Solution>
-</Problem>
-
-<Problem title="Naloga 11: Graf hitrosti (pospešek)" difficulty={1}>
-Graf prikazuje hitrost avtomobila, ki enakomerno pospešuje. Izračunaj pospešek in prevoženo pot v 4 sekundah.
-
-<Graph 
-  title="Graf hitrosti v(t)"
-  xKey="t"
-  yKey="v"
-  yLabel="v [m/s]"
-  data={[
-    { t: 0, v: 0 },
-    { t: 4, v: 20 }
-  ]}
-/>
-
-<Solution>
-**Pospešek:**
-Naklon premice na grafu $v(t)$ je pospešek.
-$$ a = \frac{\Delta v}{\Delta t} = \frac{20 - 0}{4} = 5 \text{ m/s}^2 $$
-
-**Pot:**
-Pot je ploščina pod grafom (trikotnik).
-$$ s = \frac{v \cdot t}{2} = \frac{20 \cdot 4}{2} = 40 \text{ m} $$
-</Solution>
-</Problem>
-
-<Problem title="Naloga 12: Risanje v(t)" difficulty={1}>
-Telo 5 sekund miruje, nato 5 sekund pospešuje do hitrosti 10 m/s in se nato 5 sekund giblje s to hitrostjo. Nariši graf $v(t)$.
-
-<Solution>
-**Točke:**
-1. 0-5s: $v=0$. (0,0) do (5,0).
-2. 5-10s: Pospešuje do 10. (5,0) do (10,10).
-3. 10-15s: Enakomerno. (10,10) do (15,10).
-
-<Graph 
-  title="Graf hitrosti v(t)"
-  xKey="t"
-  yKey="v"
-  yLabel="v [m/s]"
-  data={[
-    { t: 0, v: 0 },
-    { t: 5, v: 0 },
-    { t: 10, v: 10 },
-    { t: 15, v: 10 }
-  ]}
-/>
-</Solution>
-</Problem>
-
-<Problem title="Naloga 13: Graf pospeška" difficulty={1}>
-Spodnji graf prikazuje pospešek telesa. Telo začne iz mirovanja. Kolikšna je hitrost po 10 sekundah?
-
-<Graph 
-  title="Graf pospeška a(t)"
-  xKey="t"
-  yKey="a"
-  yLabel="a [m/s²]"
-  type="stepAfter"
-  data={[
-    { t: 0, a: 2 },
-    { t: 5, a: 2 },
-    { t: 5.01, a: 0 },
-    { t: 10, a: 0 }
-  ]}
-/>
-
-<Solution>
-**Razmislek:**
-Sprememba hitrosti je ploščina pod grafom $a(t)$.
-
-**Račun:**
-1. del (0-5s): $a=2$. Ploščina pravokotnika: $\Delta v_1 = 2 \cdot 5 = 10 \text{ m/s}$.
-2. del (5-10s): $a=0$. Hitrost se ne spreminja.
-
-Končna hitrost: $v = 0 + 10 = 10 \text{ m/s}$.
 </Solution>
 </Problem>
 

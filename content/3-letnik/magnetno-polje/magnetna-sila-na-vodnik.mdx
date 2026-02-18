@@ -1,0 +1,120 @@
+---
+title: "Magnetna sila na vodnik"
+section: "3. letnik"
+subsection: "Magnetno polje"
+---
+
+<EquationBox>
+  <EqRow>
+    $$ F = I l B \sin \alpha $$
+
+    **Ampèrova sila**: Sila na vodnik dolžine $l$ s tokom $I$ v polju $B$.
+  </EqRow>
+  <EqRow>
+    $$ \frac{F}{l} = \frac{\mu_0 I_1 I_2}{2\pi r} $$
+
+    **Sila med vodnikoma**: Sila na enoto dolžine med vzporednima vodnikoma na razdalji $r$.
+  </EqRow>
+</EquationBox>
+
+
+<ProblemSet>
+
+<Problem title="1. Sila na vodnik" difficulty={0}>
+Vodnik dolžine $40 \, \text{cm}$ leži v magnetnem polju s gostote $0,5 \, \text{T}$ pod kotom $90^\circ$ na magnetne silnice. Po vodniku teče tok $2 \, \text{A}$. Kolikšna sila deluje nanj?
+
+<Solution>
+**Podatki:**
+- $l = 0,4 \, \text{m}$
+- $B = 0,5 \, \text{T}$
+- $I = 2 \, \text{A}$
+- $\alpha = 90^\circ \implies \sin 90^\circ = 1$
+
+**Račun:**
+$$ F = I l B \sin \alpha = 2 \cdot 0,4 \cdot 0,5 \cdot 1 = 0,4 \, \text{N} $$
+</Solution>
+</Problem>
+
+<Problem title="2. Sila na kratek vodnik" difficulty={0}>
+Vodnik dolžine $5 \, \text{cm}$ je v homogenem magnetnem polju gostote $0,4 \, \text{T}$ in je pravokoten na silnice. Kolikšna sila deluje nanj, če skoznjo teče tok $3 \, \text{A}$?
+
+<Solution>
+**Podatki:**
+- $l = 0,05 \, \text{m}$
+- $B = 0,4 \, \text{T}$
+- $I = 3 \, \text{A}$
+
+**Račun:**
+$$ F = I l B = 3 \cdot 0,05 \cdot 0,4 = 0,06 \text{ N} = 60 \text{ mN} $$
+</Solution>
+</Problem>
+
+<Problem title="3. Kot med vodnikom in poljem" difficulty={1}>
+Na vodnik dolžine $1 \, \text{m}$, po katerem teče tok $10 \, \text{A}$, deluje v polju $0,2 \, \text{T}$ magnetna sila $1 \, \text{N}$. Pod kolikšnim kotom glede na silnice leži vodnik?
+
+<Solution>
+**Podatki:**
+- $F = 1 \, \text{N}$
+- $I = 10 \, \text{A}$
+- $l = 1 \, \text{m}$
+- $B = 0,2 \, \text{T}$
+
+**Račun:**
+$$ F = I l B \sin \alpha \implies \sin \alpha = \frac{F}{I l B} $$
+$$ \sin \alpha = \frac{1}{10 \cdot 1 \cdot 0,2} = \frac{1}{2} = 0,5 $$
+$$ \alpha = \arcsin(0,5) = 30^\circ $$
+</Solution>
+</Problem>
+
+<Problem title="4. Sila med vodnikoma" difficulty={1}>
+Dva dolga vzporedna vodnika sta na razdalji $5 \, \text{cm}$. Po prvem teče tok $10 \, \text{A}$, po drugem pa $20 \, \text{A}$ v nasprotni smeri. Kolikšna sila deluje na $2 \, \text{m}$ dolg del drugega vodnika? Ali se vodnika privlačita ali odbijata?
+
+<Solution>
+**Podatki:**
+- $r = 0,05 \, \text{m}$
+- $I_1 = 10 \, \text{A}$, $I_2 = 20 \, \text{A}$
+- $l = 2 \, \text{m}$
+
+**Račun:**
+$$ F = \frac{\mu_0 I_1 I_2}{2\pi r} \cdot l = \frac{4\pi \cdot 10^{-7} \cdot 10 \cdot 20}{2\pi \cdot 0,05} \cdot 2 $$
+$$ F = \frac{2 \cdot 10^{-7} \cdot 200}{0,05} \cdot 2 = \frac{4 \cdot 10^{-5}}{0,05} \cdot 2 = 8 \cdot 10^{-4} \cdot 2 = 1,6 \cdot 10^{-3} \, \text{N} = 1,6 \, \text{mN} $$
+Ker tokova tečeta v nasprotni smeri, se vodnika **odbijata**.
+</Solution>
+</Problem>
+
+<Problem title="5. Odbojna sila" difficulty={1}>
+Dva vzporedna vodnika dolžine $50 \, \text{cm}$ sta na razdalji $2 \, \text{cm}$. Po obeh teče tok $5 \, \text{A}$ v nasprotnih smereh. Kolikšna sila deluje med njima?
+
+<Solution>
+**Podatki:**
+- $l = 0,5 \, \text{m}$
+- $r = 0,02 \, \text{m}$
+- $I_1 = I_2 = 5 \, \text{A}$
+
+**Račun:**
+$$ F = \frac{\mu_0 I_1 I_2}{2\pi r} \cdot l $$
+$$ F = \frac{4\pi \cdot 10^{-7} \cdot 5 \cdot 5}{2\pi \cdot 0,02} \cdot 0,5 = \frac{2 \cdot 10^{-7} \cdot 25}{0,02} \cdot 0,5 $$
+$$ F = 2,5 \cdot 10^{-4} \cdot 0,5 = 1,25 \cdot 10^{-4} \text{ N} = 0,125 \text{ mN} $$
+</Solution>
+</Problem>
+
+<Problem title="6. Ravnovesje sil" difficulty={2}>
+Tanka vodoravna žica dolžine $50 \, \text{cm}$ in mase $10 \, \text{g}$ leži v vodoravnem magnetnem polju, ki je pravokotno na žico. Kolikšna mora biti gostota polja, da bi žica lebdela, če skoznjo spustimo tok $5 \, \text{A}$?
+
+<Solution>
+**Podatki:**
+- $l = 0,5 \, \text{m}$
+- $m = 0,01 \, \text{kg}$
+- $I = 5 \, \text{A}$
+- $g \approx 9,8 \, \text{m/s}^2$
+
+**Razmislek:**
+Da žica lebdi, mora biti magnetna sila enaka sili teže: $F_m = F_g$.
+$$ I l B = m g \implies B = \frac{m g}{I l} $$
+
+**Račun:**
+$$ B = \frac{0,01 \cdot 9,8}{5 \cdot 0,5} = \frac{0,098}{2,5} \approx 0,0392 \, \text{T} = 39,2 \, \text{mT} $$
+</Solution>
+</Problem>
+
+</ProblemSet>

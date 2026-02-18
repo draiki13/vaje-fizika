@@ -38,112 +38,22 @@ export async function generateLatex(slug: string[]): Promise<string> {
     const section = sectionMatch ? sectionMatch[1] : '';
     const subsection = subsectionMatch ? subsectionMatch[1] : '';
 
+    // Strip frontmatter to avoid it appearing in the body
+    const cleanContent = fileContent.replace(/^---[\s\S]*?---/, '');
+
     // Parse MDX
     const processor = unified()
         .use(remarkParse)
         .use(remarkMath)
         .use(remarkMdx);
 
-    const tree = processor.parse(fileContent);
+    const tree = processor.parse(cleanContent);
 
-    let latexBody = '';
-    let currentProblemTitle = '';
-    let problemCount = 0;
-
-    visit(tree, (node: any) => {
-        // Handle JSX Elements (Problem, Graph, Solution)
-        if (node.type === 'mdxJsxFlowElement') {
-            if (node.name === 'Problem') {
-                problemCount++;
-                const titleAttr = node.attributes.find((attr: any) => attr.name === 'title');
-                const problemTitle = titleAttr ? titleAttr.value : `Naloga ${problemCount}`;
-                currentProblemTitle = problemTitle;
-
-                latexBody += `\\subsection*{${problemTitle}}\n\n`;
-            }
-            else if (node.name === 'Graph') {
-                const dataAttr = node.attributes.find((attr: any) => attr.name === 'data');
-                const xKeyAttr = node.attributes.find((attr: any) => attr.name === 'xKey');
-                const yKeyAttr = node.attributes.find((attr: any) => attr.name === 'yKey');
-                const xLabelAttr = node.attributes.find((attr: any) => attr.name === 'xLabel');
-                const yLabelAttr = node.attributes.find((attr: any) => attr.name === 'yLabel');
-                const titleAttr = node.attributes.find((attr: any) => attr.name === 'title');
-
-                if (dataAttr && dataAttr.value) {
-                    try {
-                        // Unsafe eval to parse the JS array string from MDX
-                        // In a real app, use a safer parser.
-                        const data = new Function('return ' + dataAttr.value.value)();
-                        const xKey = xKeyAttr ? xKeyAttr.value : 'x';
-                        const yKey = yKeyAttr ? yKeyAttr.value : 'y';
-                        const xLabel = xLabelAttr ? xLabelAttr.value : xKey;
-                        const yLabel = yLabelAttr ? yLabelAttr.value : yKey;
-                        const graphTitle = titleAttr ? titleAttr.value : '';
-
-                        let coords = '';
-                        data.forEach((point: any) => {
-                            coords += `(${point[xKey]},${point[yKey]}) `;
-                        });
-
-                        latexBody += `
-\\begin{center}
-\\begin{tikzpicture}
-\\begin{axis}[
-    title={${graphTitle}},
-    xlabel={${xLabel}},
-    ylabel={${yLabel}},
-    grid=major,
-    width=10cm,
-    height=6cm
-]
-\\addplot[color=blue, mark=*] coordinates {
-    ${coords}
-};
-\\end{axis}
-\\end{tikzpicture}
-\\end{center}
-`;
-                    } catch (e) {
-                        console.error('Error parsing graph data', e);
-                    }
-                }
-            }
-            else if (node.name === 'Solution') {
-                // Skip solution content
-                return 'skip';
-            }
-            else if (node.name === 'ProblemSet') {
-                // Just a wrapper, continue
-            }
-        }
-
-        // Handle Text inside Problem (but not inside Solution)
-        // We need to track if we are inside a Solution node.
-        // Since 'visit' is depth-first, we can't easily skip children from here unless we return 'skip'.
-        // But 'visit' doesn't support skipping specific children easily in the callback for the parent.
-        // Strategy: We only process text nodes if their ancestors don't include 'Solution'.
-        // Actually, simpler: The 'visit' function allows us to modify the tree or skip.
-        // If we encounter 'Solution', we return 'skip' to not visit its children.
-
-        // BUT, 'visit' visits the node itself.
-        // So if node.name === 'Solution', we return 'skip'.
-        // This is handled above.
-
-        // Handle Paragraphs and Text
-        if (node.type === 'paragraph') {
-            // We need to process children of paragraph
-            // But 'visit' will visit them too.
-            // We should construct latexBody incrementally.
-            // This visitor approach is tricky for reconstruction.
-            // Better approach: A recursive function `toLatex(node)`
-        }
-    });
-
-    // Let's switch to a recursive function approach for better control
-    latexBody = processNode(tree);
+    // Let's use the recursive function approach directly
+    const latexBody = processNode(tree);
 
     return `
-\\documentclass{article}
+\\documentclass[12pt]{article}
 \\usepackage[utf8]{inputenc}
 \\usepackage[T1]{fontenc}
 \\usepackage{amsmath}
@@ -151,11 +61,12 @@ export async function generateLatex(slug: string[]): Promise<string> {
 \\usepackage{pgfplots}
 \\pgfplotsset{compat=1.18}
 \\usepackage{geometry}
+\\usepackage{array}
 \\geometry{a4paper, margin=1in}
 \\usepackage{parskip}
 
 \\title{${title}}
-\\author{${section} - ${subsection}}
+\\author{${section} --- ${subsection}}
 \\date{}
 
 \\begin{document}
@@ -177,8 +88,8 @@ function processNode(node: any): string {
         if (node.name === 'Problem') {
             const titleAttr = node.attributes.find((attr: any) => attr.name === 'title');
             const title = titleAttr ? titleAttr.value : 'Naloga';
-            const childrenLatex = node.children.map(processNode).join('');
-            return `\\section*{${title}}\n${childrenLatex}\n\\vspace{0.5cm}\n`;
+            const childrenLatex = node.children.map(processNode).join('').trim();
+            return `\\textbf{${title}} ${childrenLatex}\n\n\\vspace{0.5cm}\n`;
         }
         if (node.name === 'Graph') {
             return generateGraphLatex(node);
@@ -186,8 +97,58 @@ function processNode(node: any): string {
         if (node.name === 'Solution') {
             return ''; // Skip solutions
         }
-        if (node.name === 'ProblemSet' || node.name === 'EquationBox') {
+        if (node.name === 'EquationBox') {
+            const rows = node.children.filter((c: any) => c.name === 'EqRow');
+            if (rows.length === 0) return node.children.map(processNode).join('\n');
+
+            let tableRows = '';
+            for (const row of rows) {
+                // Find primary math node
+                let primaryMathNode: any = null;
+                const findPrimaryMath = (n: any): boolean => {
+                    if (n.type === 'math' || n.type === 'inlineMath') {
+                        primaryMathNode = n;
+                        return true;
+                    }
+                    if (n.children) return n.children.some(findPrimaryMath);
+                    return false;
+                };
+                findPrimaryMath(row);
+
+                // Helper to render description without the primary math node
+                const renderDescription = (n: any): string => {
+                    if (n === primaryMathNode) return '';
+                    if (n.type === 'paragraph') return n.children.map(renderDescription).join('');
+                    if (n.type === 'text') return escapeLatex(n.value);
+                    if (n.type === 'inlineMath') return `$${n.value}$`;
+                    if (n.type === 'math') return `\\[${n.value}\\]`;
+                    if (n.type === 'strong' || n.type === 'emphasis') return n.children.map(renderDescription).join('');
+                    if (n.children) return n.children.map(renderDescription).join('');
+                    return '';
+                };
+
+                const descLatex = row.children.map(renderDescription).join('').trim().replace(/\n/g, ' ');
+                const mathLatex = primaryMathNode ? `$\\displaystyle ${primaryMathNode.value}$` : '';
+
+                tableRows += `${mathLatex} & ${descLatex} \\\\ \\hline\n`;
+            }
+
+            return `
+\\begin{center}
+\\renewcommand{\\arraystretch}{2}
+\\begin{tabular}{|>{\\centering\\arraybackslash}m{0.35\\textwidth}|m{0.55\\textwidth}|}
+\\hline
+${tableRows}
+\\end{tabular}
+\\end{center}
+\\vspace{1cm}
+`;
+        }
+        if (node.name === 'ProblemSet') {
             return node.children.map(processNode).join('\n');
+        }
+        if (node.name === 'EqRow') {
+            return ''; // Handled by EquationBox
         }
     }
 
@@ -218,7 +179,7 @@ function processNode(node: any): string {
     }
 
     if (node.type === 'strong') {
-        return `\\textbf{${node.children.map(processNode).join('')}}`;
+        return node.children.map(processNode).join('');
     }
 
     if (node.type === 'emphasis') {

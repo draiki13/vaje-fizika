@@ -1,0 +1,104 @@
+---
+title: "Sila na nabiti delec"
+section: "3. letnik"
+subsection: "Magnetno polje"
+---
+
+<EquationBox>
+  <EqRow>
+    $$ F = e v B \sin \alpha $$
+
+    **Lorentzova sila**: Sila na delec z nabojem $e$, ki se giblje s hitrostjo $v$ v polju $B$.
+  </EqRow>
+  <EqRow>
+    $$ r = \frac{m v}{e B} $$
+
+    **Radij kroženja**: Polmer kroženja delca v homogenem magnetnem polju.
+  </EqRow>
+</EquationBox>
+
+
+<ProblemSet>
+
+<Problem title="1. Sila na elektron" difficulty={0}>
+Elektron se giblje s hitrostjo $2 \cdot 10^6 \, \text{m/s}$ v magnetnem polju gostote $0,1 \, \text{T}$ pravokotno na silnice. Kolikšna sila deluje nanj? ($e = 1,6 \cdot 10^{-19} \, \text{As}$)
+
+<Solution>
+**Podatki:**
+- $v = 2 \cdot 10^6 \, \text{m/s}$
+- $B = 0,1 \, \text{T}$
+- $e = 1,6 \cdot 10^{-19} \, \text{As}$
+
+**Račun:**
+$$ F = e v B = 1,6 \cdot 10^{-19} \cdot 2 \cdot 10^6 \cdot 0,1 = 3,2 \cdot 10^{-14} \, \text{N} $$
+</Solution>
+</Problem>
+
+<Problem title="2. Sila na alfa delec" difficulty={0}>
+Alfa delec (naboj $e_{alfa} = 2e = 3,2 \cdot 10^{-19} \, \text{As}$) se giblje s hitrostjo $10^6 \, \text{m/s}$ v polju $0,5 \, \text{T}$ pravokotno na silnice. Kolikšna sila deluje nanj?
+
+<Solution>
+**Podatki:**
+- $e = 3,2 \cdot 10^{-19} \, \text{As}$
+- $v = 10^6 \, \text{m/s}$
+- $B = 0,5 \, \text{T}$
+
+**Račun:**
+$$ F = e v B = 3,2 \cdot 10^{-19} \cdot 10^6 \cdot 0,5 = 1,6 \cdot 10^{-13} \text{ N} $$
+</Solution>
+</Problem>
+
+<Problem title="3. Polmer kroženja" difficulty={1}>
+Proton ($m = 1,67 \cdot 10^{-27} \, \text{kg}$) vleti v magnetno polje $0,5 \, \text{T}$ s hitrostjo $10^5 \, \text{m/s}$. Izračunaj polmer krožnice, po kateri se bo gibal.
+
+<Solution>
+**Podatki:**
+- $m = 1,67 \cdot 10^{-27} \, \text{kg}$
+- $v = 10^5 \, \text{m/s}$
+- $B = 0,5 \, \text{T}$
+- $e = 1,6 \cdot 10^{-19} \, \text{As}$
+
+**Račun:**
+$$ r = \frac{m v}{e B} = \frac{1,67 \cdot 10^{-27} \cdot 10^5}{1,6 \cdot 10^{-19} \cdot 0,5} $$
+$$ r = \frac{1,67 \cdot 10^{-22}}{0,8 \cdot 10^{-19}} = 2,08 \cdot 10^{-3} \, \text{m} \approx 2,1 \, \text{mm} $$
+</Solution>
+</Problem>
+
+<Problem title="4. Polmer kroženja pri manjši hitrosti" difficulty={1}>
+Elektron v magnetnem polju kroži s polmerom $10 \, \text{cm}$. Kako se spremeni polmer kroženja, če se hitrost elektrona razpolovi?
+
+<Solution>
+**Razmislek:**
+Vemo, da je $r = \frac{mv}{eB}$.
+Če se hitrost $v$ razpolovi ($v \to \frac{v}{2}$), se tudi polmer $r$ razpolovi, saj je polmer premo sorazmeren hitrosti ($r \propto v$).
+$$ r_{nov} = \frac{10 \, \text{cm}}{2} = 5 \, \text{cm} $$
+</Solution>
+</Problem>
+
+<Problem title="5. Masni spektrometer" difficulty={2}>
+Dva izotopa imata enaka naboja, a različni masi $m_1$ in $m_2 = 1,1 m_1$. Vletita v isto magnetno polje z enako hitrostjo. Kakšno je razmerje njunih polmerov kroženja?
+
+<Solution>
+**Razmislek:**
+Vemo, da je $r = \frac{m v}{e B}$. Ker so $v$, $e$ in $B$ enaki za oba delca, velja:
+$$ r \propto m $$
+Torej:
+$$ \frac{r_2}{r_1} = \frac{m_2}{m_1} = \frac{1,1 m_1}{m_1} = 1,1 $$
+Polmer drugega delca je za $10 \, \%$ večji od prvega.
+</Solution>
+</Problem>
+
+<Problem title="6. Hitrost delca v poljih" difficulty={2}>
+Delec z nabojem $10^{-6} \, \text{As}$ preleti brez odklona območje, kjer sta pravokotni električno polje $E = 1000 \, \text{V/m}$ in magnetno polje $B = 0,2 \, \text{T}$. Kolikšna je hitrost delca?
+
+<Solution>
+**Razmislek:**
+Da delec leti naravnost, mora biti električna sila enaka magnetni: $F_e = F_m$.
+$$ e E = e v B \implies v = \frac{E}{B} $$
+
+**Račun:**
+$$ v = \frac{1000}{0,2} = 5000 \, \text{m/s} = 5 \, \text{km/s} $$
+</Solution>
+</Problem>
+
+</ProblemSet>

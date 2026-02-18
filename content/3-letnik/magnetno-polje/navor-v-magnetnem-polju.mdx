@@ -1,0 +1,112 @@
+---
+title: "Navor v magnetnem polju"
+section: "3. letnik"
+subsection: "Magnetno polje"
+---
+
+<EquationBox>
+  <EqRow>
+    $$ M = N I S B \sin \alpha $$
+
+    **Navor na tuljavo**: Navor na tuljavo z $N$ zavoji, presekom $S$ in tokom $I$ v polju $B$.
+  </EqRow>
+</EquationBox>
+
+
+<ProblemSet>
+
+<Problem title="1. Osnovni navor" difficulty={0}>
+Pravokotna zanka s stranicama $5 \, \text{cm}$ in $10 \, \text{cm}$ leži v magnetnem polju gostote $0,2 \, \text{T}$ tako, da je njena ravnina vzporedna s silnicami. Po zanki teče tok $1 \, \text{A}$. Kolikšen navor deluje nanjo?
+
+<Solution>
+**Podatki:**
+- $S = 0,05 \times 0,1 = 0,005 \, \text{m}^2$
+- $B = 0,2 \, \text{T}$
+- $I = 1 \, \text{A}$
+- $N = 1$
+- Če je ravnina vzporedna s silnicami, je normala pravokotna nanje $\implies \alpha = 90^\circ, \sin \alpha = 1$.
+
+**Račun:**
+$$ M = 1 \cdot 1 \cdot 0,005 \cdot 0,2 \cdot 1 = 10^{-3} \, \text{Nm} = 1 \, \text{mNm} $$
+</Solution>
+</Problem>
+
+<Problem title="2. Navor na en zavoj" difficulty={0}>
+Kvadratna zanka s stranico $10 \, \text{cm}$ ima tok $2 \, \text{A}$ in leži v polju $0,1 \, \text{T}$ tako, da je navor največji. Kolikšen je ta navor?
+
+<Solution>
+**Podatki:**
+- $a = 0,1 \, \text{m} \implies S = 0,01 \, \text{m}^2$
+- $I = 2 \, \text{A}$
+- $B = 0,1 \, \text{T}$
+
+**Račun:**
+$$ M = I S B = 2 \cdot 0,01 \cdot 0,1 = 0,002 \text{ Nm} = 2 \text{ mNm} $$
+</Solution>
+</Problem>
+
+<Problem title="3. Navor na tuljavo" difficulty={1}>
+Tuljava s $100$ zavoji in presekom $20 \, \text{cm}^2$ je postavljena v polje $0,5 \, \text{T}$. Kolikšen tok mora teči skoznjo, da bo največji navor znašal $0,1 \, \text{Nm}$?
+
+<Solution>
+**Podatki:**
+- $N = 100$
+- $S = 0,002 \, \text{m}^2$
+- $B = 0,5 \, \text{T}$
+- $M = 0,1 \, \text{Nm}$
+
+**Račun:**
+$$ M = N I S B \sin 90^\circ \implies I = \frac{M}{N S B} $$
+$$ I = \frac{0,1}{100 \cdot 0,002 \cdot 0,5} = \frac{0,1}{0,1} = 1 \, \text{A} $$
+</Solution>
+</Problem>
+
+<Problem title="4. Odvisnost od kota" difficulty={1}>
+Zanka s tokom v magnetnem polju doseže največji navor $M_0$, ko je normala pravokotna na polje. Za koliko se navor zmanjša, če zanko zavrtimo tako, da normala oklepa s poljem kot $30^\circ$?
+
+<Solution>
+**Razmislek:**
+Vemo, da je $M \propto \sin \alpha$. 
+Za prvi primer $(\alpha=90^\circ)$ je $M_0 = \text{konst} \cdot \sin 90^\circ = \text{konst}$.
+Za drugi primer $(\alpha=30^\circ)$ je $M_1 = \text{konst} \cdot \sin 30^\circ = \text{konst} \cdot 0,5$.
+Navor se zmanjša na polovico prvotne vrednosti $(\frac{M_0}{2})$.
+</Solution>
+</Problem>
+
+<Problem title="5. Sprememba števila zavojev" difficulty={1}>
+Zanka s tokom $I$ v magnetnem polju $B$ ima navor $M$. Kolikšen bo navor, če zanko nadomestimo s tuljavo, ki ima enako površino $S$ in enak tok $I$, a ima $50$ zavojev?
+
+<Solution>
+**Razmislek:**
+Navor na tuljavo je $M = N I S B \sin \alpha$.
+Navor na eno zanko je $M_1 = I S B \sin \alpha$.
+Navor na $N$ zavojev je torej $N$-krat večji:
+$$ M_N = N \cdot M_1 = 50 \cdot M = 50 M $$
+</Solution>
+</Problem>
+
+<Problem title="6. Ravnovesje s silo težnosti" difficulty={2}>
+Kvadratna zanka s stranico $a = 10 \, \text{cm}$ in maso $50 \, \text{g}$ je prosto obešena na svoji zgornji stranici. Nahaja se v navpičnem magnetnem polju $B = 0,1 \, \text{T}$. Kolikšen tok mora teči po zanki, da se odkloni za kot $45^\circ$ od navpičnice?
+
+<Solution>
+**Podatki:**
+- $a = 0,1 \, \text{m}$
+- $S = 0,01 \, \text{m}^2$
+- $m = 0,05 \, \text{kg}$
+- $B = 0,1 \, \text{T}$
+- $\phi = 45^\circ$
+
+**Razmislek:**
+Navor magnetne sile $(\alpha = 90^\circ - \phi)$ mora biti enak navoru teže. Za tanjši izračun upoštevamo težišče zanke na polovici višine.
+$M_m = I S B \cos \phi$
+$M_g = m g \cdot \frac{a}{2} \sin \phi$
+$$ I S B \cos 45^\circ = m g \frac{a}{2} \sin 45^\circ $$
+Ker je $\sin 45^\circ = \cos 45^\circ$:
+$$ I = \frac{m g a}{2 S B} $$
+
+**Račun:**
+$$ I = \frac{0,05 \cdot 9,8 \cdot 0,1}{2 \cdot 0,01 \cdot 0,1} = \frac{0,049}{0,002} = 24,5 \, \text{A} $$
+</Solution>
+</Problem>
+
+</ProblemSet>

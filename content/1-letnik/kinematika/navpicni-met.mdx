@@ -4,6 +4,50 @@ section: "1. Letnik"
 subsection: "Kinematika"
 ---
 
-# Navpični met (izbirno)
+<EquationBox>
+  <EqRow>
+    $$ v(t) = v_0 - gt $$
 
-Tukaj bodo naloge za navpični met.
+    **Trenutna hitrost**: Hitrost telesa po času $t$. Če telo vržemo navpično navzgor ($v_0 > 0$), se mu hitrost hitrost zmanjšuje.
+  </EqRow>
+  <EqRow>
+    $$ y(t) = v_0 t - \frac{gt^2}{2} $$
+
+    **Trenutna višina**: Višina nad točko izmeta po času $t$.
+  </EqRow>
+</EquationBox>
+
+<ProblemSet>
+
+<Problem title="1. Čas do vrha" difficulty={0}>
+Žogico vržemo navpično navzgor s hitrostjo $12 \text{ m/s}$. Čez koliko časa bo dosegla najvišjo točko? ($g \approx 10 \text{ m/s}^2$)
+
+<Solution>
+**Podatki:**
+- $v_0 = 12 \text{ m/s}$
+- $v_{konec} = 0 \text{ m/s}$ (v najvišji točki)
+
+**Račun:**
+$$ v = v_0 - gt \implies 0 = 12 - 10t $$
+$$ 10t = 12 \implies t = 1,2 \text{ s} $$
+</Solution>
+</Problem>
+
+<Problem title="2. Največja višina" difficulty={1}>
+Fračo izstrelimo navpično navzgor. Najvišjo točko doseže po 2 sekundah. Kako visoko je poletel izstrelek?
+
+<Solution>
+**Podatki:**
+- $t_{dvig} = 2 \text{ s}$
+- $g = 10 \text{ m/s}^2$
+
+**Razmislek:**
+Da bi poletel 2 sekundi, mora biti začetna hitrost $v_0 = g \cdot t = 20 \text{ m/s}$.
+
+**Višina:**
+$$ y = v_0 t - \frac{gt^2}{2} $$
+$$ y = 20 \cdot 2 - \frac{10 \cdot 4}{2} = 40 - 20 = 20 \text{ m} $$
+</Solution>
+</Problem>
+
+</ProblemSet>

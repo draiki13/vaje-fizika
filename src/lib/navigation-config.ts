@@ -61,7 +61,44 @@ export const navigationConfig: NavItem[] = [
     {
         title: "3. Letnik",
         slug: "3-letnik",
-        children: [],
+        children: [
+            {
+                title: "Električni naboj",
+                slug: "elektricni-naboj",
+                children: [],
+            },
+            {
+                title: "Električni tok",
+                slug: "elektricni-tok",
+                children: [],
+            },
+            {
+                title: "Magnetno polje",
+                slug: "magnetno-polje",
+                children: [
+                    { title: "Polje vodnika in tuljave", slug: "magnetno-polje-vodnika-in-tuljave" },
+                    { title: "Magnetna sila na vodnik", slug: "magnetna-sila-na-vodnik" },
+                    { title: "Navor v magnetnem polju", slug: "navor-v-magnetnem-polju" },
+                    { title: "Sila na nabiti delec", slug: "magnetna-sila-na-nabiti-delec" },
+                    { title: "Pospeševalniki", slug: "pospesevalniki-in-ciklotron" },
+                ],
+            },
+            {
+                title: "Magnetna indukcija",
+                slug: "magnetna-indukcija",
+                children: [],
+            },
+            {
+                title: "Zvok",
+                slug: "zvok",
+                children: [],
+            },
+            {
+                title: "Optika",
+                slug: "optika",
+                children: [],
+            },
+        ],
     },
     {
         title: "4. Letnik",

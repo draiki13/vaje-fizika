@@ -4,6 +4,42 @@ section: "1. Letnik"
 subsection: "Kinematika"
 ---
 
-# Relativno gibanje
+<EquationBox>
+  <EqRow>
+    $$ \vec{v}_{1/G} = \vec{v}_{1/2} + \vec{v}_{2/G} $$
 
-Tukaj bodo naloge za relativno gibanje.
+    **Relativna hitrost**: Hitrost telesa 1 glede na podlago ($G$) je vsota hitrosti telesa 1 glede na telo 2 in hitrosti telesa 2 glede na podlago.
+  </EqRow>
+</EquationBox>
+
+<ProblemSet>
+
+<Problem title="1. Tek na vlaku" difficulty={0}>
+Vlak vozi s hitrostjo $80 \text{ km/h}$. Potnik v vlaku teče v smeri vožnje s hitrostjo $10 \text{ km/h}$ glede na vlak. Kolikšna je hitrost potnika glede na tirnice?
+
+<Solution>
+**Podatki:**
+- $v_{v/t} = 80 \text{ km/h}$ (vlak glede na tirnice)
+- $v_{p/v} = 10 \text{ km/h}$ (potnik glede na vlak)
+
+**Račun:**
+Ker se gibljeta v isto smer, hitrosti seštejemo:
+$$ v_{p/t} = v_{p/v} + v_{v/t} = 10 + 80 = 90 \text{ km/h} $$
+</Solution>
+</Problem>
+
+<Problem title="2. Hoja po stopnicah" difficulty={0}>
+Tekoče stopnice se premikajo navzgor s hitrostjo $0,5 \text{ m/s}$. Človek hodi po njih navzdol s hitrostjo $0,8 \text{ m/s}$ glede na stopnice. Kolikšna je njegova hitrost glede na stavbo?
+
+<Solution>
+**Podatki:**
+- $v_{s} = 0,5 \text{ m/s}$ (stopnice navzgor)
+- $v_{c} = -0,8 \text{ m/s}$ (človek navzdol)
+
+**Račun:**
+$$ v_{res} = 0,5 - 0,8 = -0,3 \text{ m/s} $$
+Človek se giblje s hitrostjo $0,3 \text{ m/s}$ v smeri **navzdol**.
+</Solution>
+</Problem>
+
+</ProblemSet>
