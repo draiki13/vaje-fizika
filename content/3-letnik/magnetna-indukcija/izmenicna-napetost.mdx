@@ -6,9 +6,9 @@ subsection: "Magnetna indukcija"
 
 <EquationBox>
   <EqRow>
-    $$ U(t) = U_0 \sin(\omega t + \phi_0) $$
+    $$ U(t) = U_0 \sin(\omega t) $$
 
-    **Splošna enačba**: Časovna odvisnost izmenične napetosti, kjer je $U_0$ amplituda, $\omega$ krožna frekvenca, $t$ čas in $\phi_0$ začetni fazni kot.
+    **Splošna enačba**: Časovna odvisnost izmenične napetosti, kjer je $U_0$ amplituda, $\omega$ krožna frekvenca in $t$ čas.
   </EqRow>
   <EqRow>
     $$ \omega = 2\pi f = \frac{2\pi}{t_0} $$
@@ -16,9 +16,19 @@ subsection: "Magnetna indukcija"
     **Krožna frekvenca**: Povezava s frekvenco $f$ in nihajnim časom $t_0$.
   </EqRow>
   <EqRow>
-    $$ U_{eff} = \frac{U_0}{\sqrt{2}} \approx 0,707 \, U_0 $$
+    $$ U_{eff} = \frac{U_0}{\sqrt{2}}, \quad I_{eff} = \frac{I_0}{\sqrt{2}} $$
 
-    **Efektivna vrednost**: Vrednost enosmerne napetosti, ki bi na istem porabniku v enakem času sprostila enako toploto kot izmenična napetost.
+    **Efektivni vrednosti**: Vrednosti enosmerne napetosti in toka, ki bi na istem porabniku sprostila enako toploto.
+  </EqRow>
+  <EqRow>
+    $$ P = U_{eff} I_{eff} = \frac{1}{2} U_0 I_0 $$
+
+    **Povprečna moč**: Povprečna moč, ki se sprošča na ohmskem porabniku.
+  </EqRow>
+  <EqRow>
+    $$ R = \frac{U_{eff}}{I_{eff}} = \frac{U_0}{I_0} $$
+
+    **Ohmov zakon**: Velja za efektivne in maksimalne vrednosti na ohmskem porabniku.
   </EqRow>
 </EquationBox>
 
@@ -63,7 +73,7 @@ $$ U_{eff} = \frac{U_0}{\sqrt{2}} = \frac{12}{1,414} \approx 8,48 \, \text{V} $$
 </Problem>
 
 <Problem title="4. Časovna odvisnost" difficulty={1}>
-Zapiši enačbo za izmenično napetost s frekvenco $60 \, \text{Hz}$ in amplitudo $170 \, \text{V}$. Predpostavi, da je začetni fazni kot $\phi_0 = 0$.
+Zapiši enačbo za izmenično napetost s frekvenco $60 \, \text{Hz}$ in amplitudo $170 \, \text{V}$.
 
 <Solution>
 **Podatki:**
@@ -93,7 +103,7 @@ $$ U = 50 \cdot 0,707 = 35,35 \, \text{V} $$
 </Problem>
 
 <Problem title="6. Določanje periode iz grafa" difficulty={1}>
-Sinusna napetost doseže prvo maksimalno vrednost $10 \, \text{V}$ v času $5 \, \text{ms}$. Kolikšna je frekvenca te napetosti in kolikšna je napetost pri $t = 15 \, \text{ms}$? (Začetna faza je 0).
+Sinusna napetost doseže prvo maksimalno vrednost $10 \, \text{V}$ v času $5 \, \text{ms}$. Kolikšna je frekvenca te napetosti in kolikšna je napetost pri $t = 15 \, \text{ms}$?
 
 <Solution>
 **Razmislek:**
@@ -120,19 +130,21 @@ Graf je standardna sinusoida, ki se začne v koordinatnem izhodišču, narašča
 </Solution>
 </Problem>
 
-<Problem title="8. Fazni premik" difficulty={2}>
-Dve izmenični napetosti imata enako frekvenco $50 \, \text{Hz}$. Ena doseže maksimum pri $t = 0$, druga pa $5 \, \text{ms}$ kasneje. Kolikšna je fazna razlika med njima v radianih in stopinjah?
+<Problem title="8. Iskanje časa" difficulty={2}>
+Časovna odvisnost napetosti je podana z enačbo $U(t) = 230 \, \text{V} \cdot \sqrt{2} \cdot \sin(100\pi \, \text{s}^{-1} \cdot t)$. Koliko časa po začetku ($t=0$) napetost prvič doseže vrednost $230 \, \text{V}$?
 
 <Solution>
 **Podatki:**
-- $f = 50 \, \text{Hz} \implies t_0 = 20 \, \text{ms}$
-- Časovni zamik $\Delta t = 5 \, \text{ms}$
+- $U(t) = 230 \, \text{V}$
+- $U_0 = 230\sqrt{2} \, \text{V}$
+- $\omega = 100\pi \, \text{s}^{-1}$
 
 **Račun:**
-Fazna razlika $\Delta \phi$ se izračuna kot:
-$$ \Delta \phi = \frac{\Delta t}{t_0} \cdot 360^\circ = \frac{5}{20} \cdot 360^\circ = \frac{1}{4} \cdot 360^\circ = 90^\circ $$
-V radianih:
-$$ \Delta \phi = \frac{\pi}{2} \approx 1,57 \, \text{rad} $$
+$$ 230 = 230\sqrt{2} \cdot \sin(100\pi t) $$
+$$ \sin(100\pi t) = \frac{230}{230\sqrt{2}} = \frac{1}{\sqrt{2}} = \frac{\sqrt{2}}{2} $$
+Vemo, da je $\sin(x) = \frac{\sqrt{2}}{2}$, ko je $x = \frac{\pi}{4}$.
+$$ 100\pi t = \frac{\pi}{4} \implies 100 t = \frac{1}{4} $$
+$$ t = \frac{1}{400} \, \text{s} = 0,0025 \, \text{s} = 2,5 \, \text{ms} $$
 </Solution>
 </Problem>
 
@@ -164,6 +176,49 @@ $$ U_0 = 100 \cdot 5 \cdot 10^{-3} \cdot 0,2 \cdot 100\pi $$
 $$ U_0 = (100 \cdot 0,005) \cdot 0,2 \cdot 314 = 0,5 \cdot 0,2 \cdot 314 = 0,1 \cdot 314 = 31,4 \, \text{V} $$
 **Enačba:**
 $$ U(t) = 31,4 \, \text{V} \cdot \sin(314 \, \text{s}^{-1} \cdot t) $$
+</Solution>
+</Problem>
+
+<Problem title="11. Moč grelca" difficulty={1}>
+Grelnik z uporom $100 \, \Omega$ priključimo na omrežno napetost $230 \, \text{V}$ (efektivna vrednost). Kolikšen efektivni tok teče skozi grelnik in kolikšna je njegova povprečna moč?
+
+<Solution>
+**Podatki:**
+- $R = 100 \, \Omega$
+- $U_{eff} = 230 \, \text{V}$
+
+**Račun:**
+$$ I_{eff} = \frac{U_{eff}}{R} = \frac{230}{100} = 2,3 \, \text{A} $$
+$$ P = U_{eff} \cdot I_{eff} = 230 \cdot 2,3 = 529 \, \text{W} $$
+</Solution>
+</Problem>
+
+<Problem title="12. Izračun iz amplitude toka" difficulty={2}>
+Skozi žarnico z uporom $460 \, \Omega$ teče izmenični tok z amplitudo $I_0 = 0,707 \, \text{A}$. Kolikšna je efektivna napetost na žarnici in kolikšna povprečna moč se na njej troši?
+
+<Solution>
+**Podatki:**
+- $R = 460 \, \Omega$
+- $I_0 = 0,707 \, \text{A} \approx \frac{1}{\sqrt{2}} \, \text{A}$
+
+**Račun:**
+$$ I_{eff} = \frac{I_0}{\sqrt{2}} = \frac{0,707}{1,414} \approx 0,5 \, \text{A} $$
+$$ U_{eff} = I_{eff} \cdot R = 0,5 \cdot 460 = 230 \, \text{V} $$
+$$ P = U_{eff} \cdot I_{eff} = 230 \cdot 0,5 = 115 \, \text{W} $$
+</Solution>
+</Problem>
+
+<Problem title="13. Maksimalna moč" difficulty={2}>
+Likalnik ima povprečno moč $2000 \, \text{W}$ pri efektivni napetosti $230 \, \text{V}$. Kolikšna je maksimalna (vršna) moč, ki jo likalnik doseže v enem ciklu?
+
+<Solution>
+**Razmislek:**
+Trenutna moč na ohmskem porabniku je $P(t) = U(t) I(t) = U_0 I_0 \sin^2(\omega t)$.
+Maksimalna moč je $P_{max} = U_0 I_0$.
+Vemo, da je povprečna moč $P = \frac{1}{2} U_0 I_0 \implies P_{max} = 2P$.
+
+**Račun:**
+$$ P_{max} = 2 \cdot 2000 \, \text{W} = 4000 \, \text{W} = 4 \, \text{kW} $$
 </Solution>
 </Problem>
 
