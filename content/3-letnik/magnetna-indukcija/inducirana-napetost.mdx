@@ -1,0 +1,64 @@
+---
+title: "Inducirana napetost"
+section: "3. letnik"
+subsection: "Magnetna indukcija"
+---
+
+<EquationBox>
+  <EqRow>
+    $$ U_i = l v B \sin \phi $$
+
+    **Inducirana napetost na palčko**: Napetost, ki se inducira na prevodni palčki dolžine $l$, ki se giblje s hitrostjo $v$ v magnetnem polju gostote $B$. $\phi$ je kot med smerjo gibanja in magnetnim poljem.
+  </EqRow>
+</EquationBox>
+
+<ProblemSet>
+
+<Problem title="1. Osnovna inducirana napetost" difficulty={0}>
+Bakrena palica dolžine $20 \, \text{cm}$ se giblje s hitrostjo $5 \, \text{m/s}$ v homogenem magnetnem polju z gostoto $0,4 \, \text{T}$. Palica je postavljena pravokotno na magnetne silnice in se giblje pravokotno na svojo dolžino in na silnice. Kolikšna napetost se inducira na njenih koncih?
+
+<Solution>
+**Podatki:**
+- $l = 0,2 \, \text{m}$
+- $v = 5 \, \text{m/s}$
+- $B = 0,4 \, \text{T}$
+- $\phi = 90^\circ \implies \sin \phi = 1$
+
+**Račun:**
+$$ U_i = l v B \sin \phi = 0,2 \cdot 5 \cdot 0,4 \cdot 1 $$
+$$ U_i = 1 \cdot 0,4 = 0,4 \, \text{V} $$
+</Solution>
+</Problem>
+
+<Problem title="2. Hitrost palice" difficulty={1}>
+Na koncih $50 \, \text{cm}$ dolge palice, ki se giblje pravokotno na silnice magnetnega polja z gostoto $0,2 \, \text{T}$, izmerimo inducirano napetost $0,1 \, \text{V}$. S kolikšno hitrostjo se giblje palica?
+
+<Solution>
+**Podatki:**
+- $l = 0,5 \, \text{m}$
+- $B = 0,2 \, \text{T}$
+- $U_i = 0,1 \, \text{V}$
+
+**Račun:**
+$$ U_i = l v B \implies v = \frac{U_i}{l B} $$
+$$ v = \frac{0,1}{0,5 \cdot 0,2} = \frac{0,1}{0,1} = 1 \, \text{m/s} $$
+</Solution>
+</Problem>
+
+<Problem title="3. Gibanje pod kotom" difficulty={1}>
+Letalo z razponom kril $40 \, \text{m}$ leti vodoravno s hitrostjo $900 \, \text{km/h}$. Vertikalna komponenta zemeljskega magnetnega polja znaša $5 \cdot 10^{-5} \, \text{T}$. Kolikšna napetost se inducira med koncema kril?
+
+<Solution>
+**Podatki:**
+- $l = 40 \, \text{m}$
+- $v = 900 \, \text{km/h} = \frac{900}{3,6} \, \text{m/s} = 250 \, \text{m/s}$
+- $B_v = 5 \cdot 10^{-5} \, \text{T}$
+
+**Račun:**
+Ker je gibanje letala (vodoravno) pravokotno na vertikalno komponento polja, je $\sin \phi = 1$.
+$$ U_i = l v B_v = 40 \cdot 250 \cdot 5 \cdot 10^{-5} $$
+$$ U_i = 10000 \cdot 5 \cdot 10^{-5} = 10^4 \cdot 5 \cdot 10^{-5} = 0,5 \, \text{V} $$
+</Solution>
+</Problem>
+
+</ProblemSet>

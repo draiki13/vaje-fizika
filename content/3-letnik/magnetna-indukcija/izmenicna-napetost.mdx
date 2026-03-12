@@ -1,0 +1,170 @@
+---
+title: "Izmenična napetost"
+section: "3. letnik"
+subsection: "Magnetna indukcija"
+---
+
+<EquationBox>
+  <EqRow>
+    $$ U(t) = U_0 \sin(\omega t + \phi_0) $$
+
+    **Splošna enačba**: Časovna odvisnost izmenične napetosti, kjer je $U_0$ amplituda, $\omega$ krožna frekvenca, $t$ čas in $\phi_0$ začetni fazni kot.
+  </EqRow>
+  <EqRow>
+    $$ \omega = 2\pi f = \frac{2\pi}{t_0} $$
+
+    **Krožna frekvenca**: Povezava s frekvenco $f$ in nihajnim časom $t_0$.
+  </EqRow>
+  <EqRow>
+    $$ U_{eff} = \frac{U_0}{\sqrt{2}} \approx 0,707 \, U_0 $$
+
+    **Efektivna vrednost**: Vrednost enosmerne napetosti, ki bi na istem porabniku v enakem času sprostila enako toploto kot izmenična napetost.
+  </EqRow>
+</EquationBox>
+
+<ProblemSet>
+
+<Problem title="1. Amplituda in efektivna vrednost" difficulty={0}>
+Efektivna vrednost omrežne napetosti v Sloveniji je $230 \, \text{V}$. Kolikšna je amplituda te napetosti?
+
+<Solution>
+**Podatki:**
+- $U_{eff} = 230 \, \text{V}$
+
+**Račun:**
+$$ U_0 = U_{eff} \cdot \sqrt{2} = 230 \cdot 1,41 $$
+$$ U_0 \approx 325 \, \text{V} $$
+</Solution>
+</Problem>
+
+<Problem title="2. Prepoznavanje iz enačbe" difficulty={0}>
+Izmenična napetost je podana z enačbo $U(t) = 100 \, \text{V} \cdot \sin(314 \, \text{s}^{-1} \cdot t)$. Določi amplitudo, krožno frekvenco in frekvenco te napetosti.
+
+<Solution>
+Iz enačbe neposredno preberemo:
+- Amplituda $U_0 = \mathbf{100 \, \text{V}}$
+- Krožna frekvenca $\omega = \mathbf{314 \, \text{s}^{-1}}$
+
+**Izračun frekvence:**
+$$ \omega = 2\pi f \implies f = \frac{\omega}{2\pi} = \frac{314}{2 \cdot 3,14} = \frac{314}{6,28} = \mathbf{50 \, \text{Hz}} $$
+</Solution>
+</Problem>
+
+<Problem title="3. Izračun efektivne vrednosti" difficulty={0}>
+Amplituda sinusne napetosti je $12 \, \text{V}$. Kolikšna je njena efektivna vrednost?
+
+<Solution>
+**Podatki:**
+- $U_0 = 12 \, \text{V}$
+
+**Račun:**
+$$ U_{eff} = \frac{U_0}{\sqrt{2}} = \frac{12}{1,414} \approx 8,48 \, \text{V} $$
+</Solution>
+</Problem>
+
+<Problem title="4. Časovna odvisnost" difficulty={1}>
+Zapiši enačbo za izmenično napetost s frekvenco $60 \, \text{Hz}$ in amplitudo $170 \, \text{V}$. Predpostavi, da je začetni fazni kot $\phi_0 = 0$.
+
+<Solution>
+**Podatki:**
+- $f = 60 \, \text{Hz}$
+- $U_0 = 170 \, \text{V}$
+
+**Račun:**
+$$ \omega = 2\pi f = 2\pi \cdot 60 = 120\pi \approx 377 \, \text{s}^{-1} $$
+**Enačba:**
+$$ U(t) = 170 \, \text{V} \cdot \sin(377 \, \text{s}^{-1} \cdot t) $$
+</Solution>
+</Problem>
+
+<Problem title="5. Izračun trenutne vrednosti" difficulty={1}>
+Napetost se spreminja po enačbi $U(t) = 50 \, \text{V} \cdot \sin(100\pi \, \text{s}^{-1} \cdot t)$. Kolikšna je napetost v trenutku $t = 2,5 \, \text{ms}$?
+
+<Solution>
+**Podatki:**
+- $t = 2,5 \cdot 10^{-3} \, \text{s}$
+- $\omega = 100\pi \, \text{s}^{-1}$
+
+**Račun:**
+$$ U(0,0025) = 50 \cdot \sin(100\pi \cdot 0,0025) = 50 \cdot \sin(0,25\pi) $$
+Vemo, da je $0,25\pi = 45^\circ$, torej $\sin(45^\circ) = \frac{\sqrt{2}}{2} \approx 0,707$.
+$$ U = 50 \cdot 0,707 = 35,35 \, \text{V} $$
+</Solution>
+</Problem>
+
+<Problem title="6. Določanje periode iz grafa" difficulty={1}>
+Sinusna napetost doseže prvo maksimalno vrednost $10 \, \text{V}$ v času $5 \, \text{ms}$. Kolikšna je frekvenca te napetosti in kolikšna je napetost pri $t = 15 \, \text{ms}$? (Začetna faza je 0).
+
+<Solution>
+**Razmislek:**
+Prvi maksimum je dosežen pri četrtini periode: $\frac{t_0}{4} = 5 \, \text{ms}$.
+$$ t_0 = 4 \cdot 5 \, \text{ms} = 20 \, \text{ms} = 0,02 \, \text{s} $$
+**Frekvenca:**
+$$ f = \frac{1}{t_0} = \frac{1}{0,02} = 50 \, \text{Hz} $$
+**Napetost pri 15 ms:**
+$15 \, \text{ms}$ predstavlja $\frac{3}{4}$ periode. Pri $\frac{3}{4} t_0$ je sinusna funkcija v minimumu (negativni maksimum).
+$$ U(15 \, \text{ms}) = -U_0 = -10 \, \text{V} $$
+</Solution>
+</Problem>
+
+<Problem title="7. Skiciranje grafa" difficulty={1}>
+Skiciraj graf napetosti $U(t) = 4 \, \text{V} \cdot \sin(2\pi \cdot 50 \, \text{s}^{-1} \cdot t)$ za eno periodo. Označi ključne točke (amplitude, ničle in periodo).
+
+<Solution>
+- **Amplituda**: $U_0 = 4 \, \text{V}$ (najvišja in najnižja točka grafa)
+- **Perioda**: $t_0 = \frac{1}{f} = \frac{1}{50} = 0,02 \, \text{s} = 20 \, \text{ms}$
+- **Ničle**: $0, \, 10 \, \text{ms}, \, 20 \, \text{ms}$
+- **Maksimum**: $5 \, \text{ms}$ $(U = 4 \, \text{V})$
+- **Minimum**: $15 \, \text{ms}$ $(U = -4 \, \text{V})$
+Graf je standardna sinusoida, ki se začne v koordinatnem izhodišču, narašča do 4 V, se vrne skozi ničlo pri 10 ms, pade do -4 V in konča periodo pri 20 ms.
+</Solution>
+</Problem>
+
+<Problem title="8. Fazni premik" difficulty={2}>
+Dve izmenični napetosti imata enako frekvenco $50 \, \text{Hz}$. Ena doseže maksimum pri $t = 0$, druga pa $5 \, \text{ms}$ kasneje. Kolikšna je fazna razlika med njima v radianih in stopinjah?
+
+<Solution>
+**Podatki:**
+- $f = 50 \, \text{Hz} \implies t_0 = 20 \, \text{ms}$
+- Časovni zamik $\Delta t = 5 \, \text{ms}$
+
+**Račun:**
+Fazna razlika $\Delta \phi$ se izračuna kot:
+$$ \Delta \phi = \frac{\Delta t}{t_0} \cdot 360^\circ = \frac{5}{20} \cdot 360^\circ = \frac{1}{4} \cdot 360^\circ = 90^\circ $$
+V radianih:
+$$ \Delta \phi = \frac{\pi}{2} \approx 1,57 \, \text{rad} $$
+</Solution>
+</Problem>
+
+<Problem title="9. Od vrha do vrha" difficulty={1}>
+Osciloskop kaže sinusno napetost, katere razdalja od spodnjega do zgornjega vrha (peak-to-peak) je $40 \, \text{V}$. Kolikšno efektivno napetost bi izmeril voltmeter?
+
+<Solution>
+**Razmislek:**
+$U_{pp} = 2 \cdot U_0 \implies U_0 = \frac{U_{pp}}{2}$
+$$ U_0 = \frac{40}{2} = 20 \, \text{V} $$
+**Efektivna vrednost:**
+$$ U_{eff} = \frac{U_0}{\sqrt{2}} = \frac{20}{1,41} \approx 14,2 \, \text{V} $$
+</Solution>
+</Problem>
+
+<Problem title="10. Generator" difficulty={2}>
+Tuljava s $100$ zavoji in presekom $50 \, \text{cm}^2$ se vrti v homogenem magnetnem polju gostote $0,2 \, \text{T}$ s frekvenco $50 \, \text{vrt/s}$. Zapiši enačbo inducirane napetosti $U(t)$.
+
+<Solution>
+**Podatki:**
+- $N = 100$
+- $S = 50 \cdot 10^{-4} \, \text{m}^2 = 5 \cdot 10^{-3} \, \text{m}^2$
+- $B = 0,2 \, \text{T}$
+- $f = 50 \, \text{Hz} \implies \omega = 100\pi \, \text{s}^{-1}$
+
+**Račun:**
+Amplituda inducirane napetosti pri vrtenju tuljave je $U_0 = N S B \omega$:
+$$ U_0 = 100 \cdot 5 \cdot 10^{-3} \cdot 0,2 \cdot 100\pi $$
+$$ U_0 = (100 \cdot 0,005) \cdot 0,2 \cdot 314 = 0,5 \cdot 0,2 \cdot 314 = 0,1 \cdot 314 = 31,4 \, \text{V} $$
+**Enačba:**
+$$ U(t) = 31,4 \, \text{V} \cdot \sin(314 \, \text{s}^{-1} \cdot t) $$
+</Solution>
+</Problem>
+
+</ProblemSet>
