@@ -86,7 +86,11 @@ export const navigationConfig: NavItem[] = [
             {
                 title: "Magnetna indukcija",
                 slug: "magnetna-indukcija",
-                children: [],
+                children: [
+                    { title: "Inducirana napetost", slug: "inducirana-napetost" },
+                    { title: "Indukcijski zakon", slug: "indukcijski-zakon" },
+                    { title: "Izmenična napetost", slug: "izmenicna-napetost" },
+                ],
             },
             {
                 title: "Zvok",
