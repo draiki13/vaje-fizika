@@ -1,0 +1,145 @@
+---
+title: "Transformator"
+section: "3. letnik"
+subsection: "Magnetna indukcija"
+---
+
+<EquationBox>
+  <EqRow>
+    $$ \frac{U_1}{U_2} = \frac{N_1}{N_2} $$
+
+    **Transformacijsko razmerje**: Razmerje napetosti na primarni ($U_1$) in sekundarni ($U_2$) strani je enako razmerju števila zavojev ($N_1, N_2$).
+  </EqRow>
+  <EqRow>
+    $$ \frac{I_1}{I_2} = \frac{N_2}{N_1} $$
+
+    **Razmerje tokov**: Pri idealnem transformatorju je razmerje tokov obratno sorazmerno razmerju števila zavojev.
+  </EqRow>
+  <EqRow>
+    $$ \eta = \frac{P_2}{P_1} = \frac{U_2 I_2}{U_1 I_1} $$
+
+    **Izkoristek**: Razmerje med oddano močjo na sekundarni strani ($P_2$) in prejeto močjo na primarni strani ($P_1$).
+  </EqRow>
+</EquationBox>
+
+<ProblemSet>
+
+<Problem title="1. Izračun števila zavojev" difficulty={0}>
+Transformator pretvori omrežno napetost $230 \, \text{V}$ na napetost $12 \, \text{V}$, ki jo potrebuje polnilnik za telefon. Primarna tuljava ima $1150$ zavojev. Koliko zavojev ima sekundarna tuljava?
+
+- **a)** Zapiši transformacijsko razmerje za napetosti.
+- **b)** Izračunaj število zavojev sekundarne tuljave $N_2$.
+
+<Solution>
+**Podatki:**
+- $U_1 = 230 \, \text{V}$
+- $U_2 = 12 \, \text{V}$
+- $N_1 = 1150$
+
+**a) Razmerje:**
+$$ \frac{U_1}{U_2} = \frac{N_1}{N_2} $$
+
+**b) Račun:**
+$$ N_2 = N_1 \cdot \frac{U_2}{U_1} = 1150 \cdot \frac{12}{230} $$
+$$ N_2 = \frac{1150}{230} \cdot 12 = 5 \cdot 12 = \mathbf{60} $$
+Sekundarna tuljava ima 60 zavojev.
+</Solution>
+</Problem>
+
+<Problem title="2. Idealni transformator in tokovi" difficulty={1}>
+Idealni transformator s $500$ zavoji na primarni in $2000$ zavoji na sekundarni strani priključimo na napetost $100 \, \text{V}$. Na sekundarno stran priključimo porabnik z močjo $200 \, \text{W}$.
+
+- **a)** Kolikšna je napetost $U_2$ na sekundarni strani?
+- **b)** Izračunaj tok $I_2$ skozi porabnik na sekundarni strani.
+- **c)** Kolikšen tok $I_1$ teče skozi primarno tuljavo?
+
+<Solution>
+**Podatki:**
+- $N_1 = 500, N_2 = 2000$
+- $U_1 = 100 \, \text{V}$
+- $P = 200 \, \text{W}$
+
+**a) Sekundarna napetost:**
+$$ U_2 = U_1 \cdot \frac{N_2}{N_1} = 100 \cdot \frac{2000}{500} = 100 \cdot 4 = \mathbf{400 \, \text{V}} $$
+
+**b) Sekundarni tok:**
+$$ P = U_2 I_2 \implies I_2 = \frac{P}{U_2} = \frac{200}{400} = \mathbf{0,5 \, \text{A}} $$
+
+**c) Primarni tok:**
+Ker je transformator idealen, je $P_1 = P_2 = 200 \, \text{W}$:
+$$ I_1 = \frac{P}{U_1} = \frac{200}{100} = \mathbf{2 \, \text{A}} $$
+(Lahko tudi preko razmerja: $I_1 = I_2 \cdot \frac{N_2}{N_1} = 0,5 \cdot 4 = 2 \, \text{A}$)
+</Solution>
+</Problem>
+
+<Problem title="3. Izkoristek transformatorja" difficulty={1}>
+Transformator na primarni strani prejema tok $0,5 \, \text{A}$ pri napetosti $230 \, \text{V}$. Na sekundarni strani, kjer je napetost $20 \, \text{V}$, teče tok $5 \, \text{A}$.
+
+- **a)** Izračunaj moč na primarni strani $P_1$ in na sekundarni strani $P_2$.
+- **b)** Kolikšen je izkoristek $\eta$ tega transformatorja?
+- **c)** Koliko toplotne moči se izgublja v transformatorju?
+
+<Solution>
+**Podatki:**
+- $U_1 = 230 \, \text{V}, I_1 = 0,5 \, \text{A}$
+- $U_2 = 20 \, \text{V}, I_2 = 5 \, \text{A}$
+
+**a) Moči:**
+$$ P_1 = U_1 I_1 = 230 \cdot 0,5 = \mathbf{115 \, \text{W}} $$
+$$ P_2 = U_2 I_2 = 20 \cdot 5 = \mathbf{100 \, \text{W}} $$
+
+**b) Izkoristek:**
+$$ \eta = \frac{P_2}{P_1} = \frac{100}{115} \approx 0,869 = \mathbf{86,9 \, \%} $$
+
+**c) Izgube:**
+$$ P_{izg} = P_1 - P_2 = 115 - 100 = \mathbf{15 \, \text{W}} $$
+</Solution>
+</Problem>
+
+<Problem title="4. Varilni aparat" difficulty={2}>
+Varilni aparat uporablja transformator, ki zniža napetost in močno poveča tok. Primarno navitje ima $400$ zavojev in je priključeno na $230 \, \text{V}$. Sekundarno navitje ima le $10$ zavojev.
+
+- **a)** Kolikšna je napetost na sekundarni strani?
+- **b)** Če skozi varilno palico teče tok $184 \, \text{A}$, kolikšen tok teče v omrežju (primarna stran)? Predpostavi idealen transformator.
+- **c)** Kolikšen upor ima varilni krog v tem trenutku?
+
+<Solution>
+**Podatki:**
+- $N_1 = 400, N_2 = 10, U_1 = 230 \, \text{V}$
+- $I_2 = 184 \, \text{A}$
+
+**a) Sekundarna napetost:**
+$$ U_2 = U_1 \cdot \frac{N_2}{N_1} = 230 \cdot \frac{10}{400} = \frac{230}{40} = \mathbf{5,75 \, \text{V}} $$
+
+**b) Primarni tok:**
+$$ \frac{I_1}{I_2} = \frac{N_2}{N_1} \implies I_1 = I_2 \cdot \frac{N_2}{N_1} = 184 \cdot \frac{10}{400} = \frac{184}{40} = \mathbf{4,6 \, \text{A}} $$
+
+**c) Upor:**
+$$ R_2 = \frac{U_2}{I_2} = \frac{5,75 \, \text{V}}{184 \, \text{A}} \approx \mathbf{0,031 \, \Omega} $$
+</Solution>
+</Problem>
+
+<Problem title="5. Prenos elektrike na daljavo" difficulty={2}>
+V elektrarni generator proizvaja napetost $10 \, \text{kV}$. To napetost s transformatorjem z razmerjem zavojev $1 : 20$ povišajo za prenos po daljnovodu.
+
+- **a)** Kolikšna je napetost v daljnovodu?
+- **b)** Na koncu daljnovoda je transformatorska postaja, ki napetost spet zniža na $400 \, \text{V}$ (trifazno) oz. $230 \, \text{V}$. Kolikšno je transformacijsko razmerje ($N_{prim} : N_{sek}$) tega transformatorja pri znižanju na $230 \, \text{V}$?
+- **c)** Zakaj elektriko na daljavo prenašamo pod visoko napetostjo? (Kratek fizikalni razmislek).
+
+<Solution>
+**Podatki:**
+- $U_{gen} = 10 \, \text{kV} = 10.000 \, \text{V}$
+- $N_1/N_2 = 1/20$ (povišanje)
+
+**a) Napetost daljnovoda:**
+$$ U_{dalj} = U_{gen} \cdot \frac{20}{1} = 10 \, \text{kV} \cdot 20 = \mathbf{200 \, \text{kV}} $$
+
+**b) Razmerje pri znižanju:**
+$$ \frac{N_{prim}}{N_{sek}} = \frac{U_{dalj}}{U_{koncna}} = \frac{200.000}{230} \approx \mathbf{870 : 1} $$
+
+**c) Razmislek:**
+Pri določeni moči $P = UI$ višja napetost pomeni manjši tok ($I = P/U$). Toplotne izgube v žicah daljnovoda so sorazmerne s kvadratom toka ($P_{izg} = I^2 R$). Z uporabo visoke napetosti in nizkega toka drastično zmanjšamo izgube energije med prenosom.
+</Solution>
+</Problem>
+
+</ProblemSet>
