@@ -90,6 +90,7 @@ export const navigationConfig: NavItem[] = [
                     { title: "Inducirana napetost", slug: "inducirana-napetost" },
                     { title: "Indukcijski zakon", slug: "indukcijski-zakon" },
                     { title: "Izmenična napetost", slug: "izmenicna-napetost" },
+                    { title: "Transformator", slug: "transformator" },
                 ],
             },
             {
